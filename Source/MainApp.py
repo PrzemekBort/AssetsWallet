@@ -38,13 +38,13 @@ class MainWindow(QMainWindow):
 
         # Delete buttons setup
         self.ui.pushButton_gold_delete.clicked.connect(
-            lambda: self.deleteWidget(self.ui.destinationVerticalLayout_gold))
+            lambda: self.deleteWidgetFrom(self.ui.destinationVerticalLayout_gold))
         self.ui.pushButton_crypto_delete.clicked.connect(
-            lambda: self.deleteWidget(self.ui.destinationVerticalLayout_crypto))
+            lambda: self.deleteWidgetFrom(self.ui.destinationVerticalLayout_crypto))
         self.ui.pushButton_currency_delete.clicked.connect(
-            lambda: self.deleteWidget(self.ui.destinationVerticalLayout_currency))
+            lambda: self.deleteWidgetFrom(self.ui.destinationVerticalLayout_currency))
         self.ui.pushButton_shares_delete.clicked.connect(
-            lambda: self.deleteWidget(self.ui.destinationVerticalLayout_shares))
+            lambda: self.deleteWidgetFrom(self.ui.destinationVerticalLayout_shares))
 
     def changePage(self, newText: str, newPageIndex: int):
         """The function changes the currently displayed page in a MainStackedWidget
@@ -159,7 +159,7 @@ class MainWindow(QMainWindow):
                                                   str(self.newWidgetPrice), self.newWidgetDate)
             destiny.addWidget(self.newWidget)
 
-    def deleteWidget(self, destiny):
+    def deleteWidgetFrom(self, destiny):
         """Function removes widget from layout and delete widget"""
         
         # Checking if any widget is clicked
