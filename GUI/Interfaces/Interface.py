@@ -12,42 +12,76 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(868, 657)
-        sizePolicy = QtWidgets.QSizePolicy(
-                QtWidgets.QSizePolicy.Policy.Expanding,
-                QtWidgets.QSizePolicy.Policy.Preferred)
+        MainWindow.resize(883, 734)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding,
+                                           QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setFocusPolicy(QtCore.Qt.FocusPolicy.ClickFocus)
         MainWindow.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.PreventContextMenu)
-        MainWindow.setStyleSheet("")
+        MainWindow.setStyleSheet(
+                "#centralwidget {\n"
+                "    background-color: #474E68;\n"
+                "}\n"
+                "\n"
+                "#label_2, #label, widget_6 {\n"
+                "    color: rgb(255, 255, 255);\n"
+                "}\n"
+                "\n"
+                "#MainStackedWidget QWidget{\n"
+                "    border-radius: 15px;\n"
+                "    color: rgb(255, 255, 255);\n"
+                "}\n"
+                "\n"
+                "#frame_2, #LeftMenuContainer {\n"
+                "    background-color: #404258;\n"
+                "}\n"
+                "\n"
+                "#LeftMenuContainer QPushButton {\n"
+                "    border-top-left-radius: 15px;\n"
+                "    border-bottom-left-radius: 15px;\n"
+                "}\n"
+                "\n"
+                "#LeftMenuContainer QPushButton:hover {\n"
+                "    background-color: #474E68;\n"
+                "}\n"
+                "\n"
+                "#MainStackedWidget QPushButton {\n"
+                "    color: white;\n"
+                "    background-color: #50577A;\n"
+                "    border:  1px solid white;\n"
+                "}\n"
+                "\n"
+                "#MainStackedWidget QPushButton:hover {\n"
+                "    background-color: #6B728E;\n"
+                "}\n"
+                "\n"
+                "#frame_shares_titles {\n"
+                "    background-color: #6B728E;\n"
+                "    border-bottom-left-radius: 0px;\n"
+                "    border-bottom-right-radius: 0px;\n"
+                "}\n"
+                "\n"
+                "\n"
+                "\n"
+                "\n"
+                "")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setMaximumSize(QtCore.QSize(167555, 167555))
-        self.centralwidget.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.LeftMenuContainer = QtWidgets.QWidget(parent=self.centralwidget)
-        self.LeftMenuContainer.setStyleSheet("background-color: #404258;")
         self.LeftMenuContainer.setObjectName("LeftMenuContainer")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.LeftMenuContainer)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.LeftMenuSubContainer = QtWidgets.QWidget(parent=self.LeftMenuContainer)
-        self.LeftMenuSubContainer.setStyleSheet(
-                "QPushButton {\n"
-                "    border-top-left-radius: 15px;\n"
-                "    border-bottom-left-radius: 15px;\n"
-                "}\n"
-                "\n"
-                "QPushButton:hover {\n"
-                "    background-color: #474E68;\n"
-                "}")
         self.LeftMenuSubContainer.setObjectName("LeftMenuSubContainer")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.LeftMenuSubContainer)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -179,7 +213,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.LeftMenuSubContainer)
         self.horizontalLayout.addWidget(self.LeftMenuContainer)
         self.MainContainer = QtWidgets.QFrame(parent=self.centralwidget)
-        self.MainContainer.setStyleSheet("background-color: #474E68;")
+        self.MainContainer.setStyleSheet("")
         self.MainContainer.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.MainContainer.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.MainContainer.setObjectName("MainContainer")
@@ -199,7 +233,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label.setStyleSheet("")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.horizontalLayout_3.addWidget(self.label)
@@ -218,19 +252,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.MainStackedWidget = QtWidgets.QStackedWidget(parent=self.MainContentContainer)
-        self.MainStackedWidget.setStyleSheet(
-                "border-radius: 15px;\n"
-                "\n"
-                "")
+        self.MainStackedWidget.setStyleSheet("")
         self.MainStackedWidget.setObjectName("MainStackedWidget")
         self.page_menu = QtWidgets.QWidget()
+        self.page_menu.setStyleSheet("")
         self.page_menu.setObjectName("page_menu")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.page_menu)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.widget_menu = QtWidgets.QWidget(parent=self.page_menu)
-        self.widget_menu.setStyleSheet("color: rgb(255, 255, 255);")
+        self.widget_menu.setStyleSheet("")
         self.widget_menu.setObjectName("widget_menu")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.widget_menu)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
@@ -334,6 +366,7 @@ class Ui_MainWindow(object):
                 "background-color: #6B728E;\n"
                 "border-top-left-radius: 0px;\n"
                 "border-top-right-radius: 0px;\n"
+                "\n"
                 "")
         self.frame_gold_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_gold_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -343,15 +376,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.scrollArea_gold = QtWidgets.QScrollArea(parent=self.frame_gold_scrollArea)
-        self.scrollArea_gold.setStyleSheet(
-                "QScrollBar {\n"
-                "    background-color: rgb(255, 0, 0);\n"
-                "    border-radius: 1px;\n"
-                "}")
+        self.scrollArea_gold.setStyleSheet("")
         self.scrollArea_gold.setWidgetResizable(True)
         self.scrollArea_gold.setObjectName("scrollArea_gold")
         self.scrollAreaWidgetContents_gold = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_gold.setGeometry(QtCore.QRect(0, 0, 775, 481))
+        self.scrollAreaWidgetContents_gold.setGeometry(QtCore.QRect(0, 0, 790, 558))
         self.scrollAreaWidgetContents_gold.setObjectName("scrollAreaWidgetContents_gold")
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_gold)
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
@@ -368,21 +397,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.scrollArea_gold)
         self.verticalLayout_16.addWidget(self.frame_gold_scrollArea)
         self.frame_gold_buttons = QtWidgets.QFrame(parent=self.page_gold)
-        self.frame_gold_buttons.setStyleSheet(
-                "QFrame {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "QPushButton {\n"
-                "    color: white;\n"
-                "    background-color: #50577A;\n"
-                "    border:  1px solid white;\n"
-                "}\n"
-                "\n"
-                "QPushButton:hover {\n"
-                "    \n"
-                "    background-color: #6B728E;\n"
-                "}")
+        self.frame_gold_buttons.setStyleSheet("")
         self.frame_gold_buttons.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_gold_buttons.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_gold_buttons.setObjectName("frame_gold_buttons")
@@ -488,6 +503,7 @@ class Ui_MainWindow(object):
                 "background-color: #6B728E;\n"
                 "border-top-left-radius: 0px;\n"
                 "border-top-right-radius: 0px;\n"
+                "\n"
                 "")
         self.frame_crypto_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_crypto_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -500,10 +516,11 @@ class Ui_MainWindow(object):
         self.scrollArea_crypto.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_crypto.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_crypto.setWidgetResizable(True)
-        self.scrollArea_crypto.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
+        self.scrollArea_crypto.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading |
+                                            QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_crypto.setObjectName("scrollArea_crypto")
         self.scrollAreaWidgetContents_crypto = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_crypto.setGeometry(QtCore.QRect(0, 0, 775, 492))
+        self.scrollAreaWidgetContents_crypto.setGeometry(QtCore.QRect(0, 0, 790, 569))
         self.scrollAreaWidgetContents_crypto.setObjectName("scrollAreaWidgetContents_crypto")
         self.verticalLayout_18 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_crypto)
         self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
@@ -525,21 +542,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_crypto_buttons.sizePolicy().hasHeightForWidth())
         self.frame_crypto_buttons.setSizePolicy(sizePolicy)
-        self.frame_crypto_buttons.setStyleSheet(
-                "QFrame {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "QPushButton {\n"
-                "    color: white;\n"
-                "    background-color: #50577A;\n"
-                "    border:  1px solid white;\n"
-                "}\n"
-                "\n"
-                "QPushButton:hover {\n"
-                "    \n"
-                "    background-color: #6B728E;\n"
-                "}")
+        self.frame_crypto_buttons.setStyleSheet("")
         self.frame_crypto_buttons.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_crypto_buttons.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_crypto_buttons.setObjectName("frame_crypto_buttons")
@@ -626,7 +629,8 @@ class Ui_MainWindow(object):
         self.frame_currency_scrollArea.setStyleSheet(
                 "background-color: #6B728E;\n"
                 "border-top-left-radius: 0px;\n"
-                "border-top-right-radius: 0px;")
+                "border-top-right-radius: 0px;\n"
+                "")
         self.frame_currency_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_currency_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_currency_scrollArea.setObjectName("frame_currency_scrollArea")
@@ -638,10 +642,11 @@ class Ui_MainWindow(object):
         self.scrollArea_currency.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_currency.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_currency.setWidgetResizable(True)
-        self.scrollArea_currency.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
+        self.scrollArea_currency.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading |
+                                              QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_currency.setObjectName("scrollArea_currency")
         self.scrollAreaWidgetContents_currency = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_currency.setGeometry(QtCore.QRect(0, 0, 775, 492))
+        self.scrollAreaWidgetContents_currency.setGeometry(QtCore.QRect(0, 0, 790, 569))
         self.scrollAreaWidgetContents_currency.setObjectName("scrollAreaWidgetContents_currency")
         self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_currency)
         self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
@@ -666,21 +671,7 @@ class Ui_MainWindow(object):
         self.frame_currency_buttons.setSizePolicy(sizePolicy)
         self.frame_currency_buttons.setFocusPolicy(QtCore.Qt.FocusPolicy.ClickFocus)
         self.frame_currency_buttons.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.PreventContextMenu)
-        self.frame_currency_buttons.setStyleSheet(
-                "QFrame {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "QPushButton {\n"
-                "    color: white;\n"
-                "    background-color: #50577A;\n"
-                "    border:  1px solid white;\n"
-                "}\n"
-                "\n"
-                "QPushButton:hover {\n"
-                "    \n"
-                "    background-color: #6B728E;\n"
-                "}")
+        self.frame_currency_buttons.setStyleSheet("")
         self.frame_currency_buttons.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_currency_buttons.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_currency_buttons.setObjectName("frame_currency_buttons")
@@ -740,7 +731,8 @@ class Ui_MainWindow(object):
         self.frame_shares_scrollArea.setStyleSheet(
                 "background-color: #6B728E;\n"
                 "border-top-left-radius: 0px;\n"
-                "border-top-right-radius: 0px;")
+                "border-top-right-radius: 0px;\n"
+                "")
         self.frame_shares_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_shares_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_shares_scrollArea.setObjectName("frame_shares_scrollArea")
@@ -752,10 +744,11 @@ class Ui_MainWindow(object):
         self.scrollArea_shares.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_shares.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_shares.setWidgetResizable(True)
-        self.scrollArea_shares.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
+        self.scrollArea_shares.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading |
+                                            QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_shares.setObjectName("scrollArea_shares")
         self.scrollAreaWidgetContents_shares = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_shares.setGeometry(QtCore.QRect(0, 0, 775, 492))
+        self.scrollAreaWidgetContents_shares.setGeometry(QtCore.QRect(0, 0, 790, 569))
         self.scrollAreaWidgetContents_shares.setObjectName("scrollAreaWidgetContents_shares")
         self.verticalLayout_22 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_shares)
         self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
@@ -772,23 +765,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.addWidget(self.scrollArea_shares)
         self.verticalLayout_11.addWidget(self.frame_shares_scrollArea)
         self.frame_shares_buttons = QtWidgets.QFrame(parent=self.page_shares)
-        self.frame_shares_buttons.setStyleSheet(
-                "QFrame {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "QPushButton {\n"
-                "    color: white;\n"
-                "    background-color: #50577A;\n"
-                "    border:  1px solid white;\n"
-                "}\n"
-                "\n"
-                "QPushButton:hover {\n"
-                "    \n"
-                "    background-color: #6B728E;\n"
-                "}")
-        self.frame_shares_buttons.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_shares_buttons.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_shares_buttons.setStyleSheet("")
+        self.frame_shares_buttons.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.frame_shares_buttons.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.frame_shares_buttons.setObjectName("frame_shares_buttons")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_shares_buttons)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
@@ -798,6 +777,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.pushButton_shares_add.setFont(font)
+        self.pushButton_shares_add.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_shares_add.setObjectName("pushButton_shares_add")
         self.horizontalLayout_8.addWidget(self.pushButton_shares_add)
         self.pushButton_shares_delete = QtWidgets.QPushButton(parent=self.frame_shares_buttons)
@@ -806,6 +786,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.pushButton_shares_delete.setFont(font)
+        self.pushButton_shares_delete.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_shares_delete.setObjectName("pushButton_shares_delete")
         self.horizontalLayout_8.addWidget(self.pushButton_shares_delete)
         self.pushButton_shares_transfer = QtWidgets.QPushButton(parent=self.frame_shares_buttons)
@@ -814,6 +795,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.pushButton_shares_transfer.setFont(font)
+        self.pushButton_shares_transfer.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_shares_transfer.setObjectName("pushButton_shares_transfer")
         self.horizontalLayout_8.addWidget(self.pushButton_shares_transfer)
         self.verticalLayout_11.addWidget(self.frame_shares_buttons)
@@ -825,7 +807,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
         self.widget_5 = QtWidgets.QWidget(parent=self.page_cash)
-        self.widget_5.setStyleSheet("color: rgb(255, 255, 255);")
+        self.widget_5.setStyleSheet("")
         self.widget_5.setObjectName("widget_5")
         self.verticalLayout_33 = QtWidgets.QVBoxLayout(self.widget_5)
         self.verticalLayout_33.setObjectName("verticalLayout_33")
@@ -847,7 +829,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.widget_6 = QtWidgets.QWidget(parent=self.page_settings)
-        self.widget_6.setStyleSheet("color: rgb(255, 255, 255);")
+        self.widget_6.setStyleSheet("")
         self.widget_6.setObjectName("widget_6")
         self.verticalLayout_21 = QtWidgets.QVBoxLayout(self.widget_6)
         self.verticalLayout_21.setObjectName("verticalLayout_21")
@@ -865,7 +847,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.addWidget(self.MainStackedWidget)
         self.verticalLayout_4.addWidget(self.MainContentContainer)
         self.frame_2 = QtWidgets.QFrame(parent=self.MainContainer)
-        self.frame_2.setStyleSheet("background-color: #404258;")
+        self.frame_2.setStyleSheet("")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -878,7 +860,7 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.label_2.setFont(font)
-        self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_2.setStyleSheet("")
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_4.addWidget(self.label_2, 0, QtCore.Qt.AlignmentFlag.AlignRight)
         self.verticalLayout_4.addWidget(self.frame_2)
@@ -921,6 +903,6 @@ class Ui_MainWindow(object):
         self.pushButton_shares_add.setText(_translate("MainWindow", "Dodaj nową pozycję"))
         self.pushButton_shares_delete.setText(_translate("MainWindow", "Usuń pozycję"))
         self.pushButton_shares_transfer.setText(_translate("MainWindow", "Transfer"))
-        self.label_4.setText(_translate("MainWindow", "Strona testowa Cash. Jeszcze nie wiem jaki tu będzie layout"))
+        self.label_4.setText(_translate("MainWindow", "Strona testowa Cash. Jeszcze nie wiem, jaki tu będzie layout"))
         self.label_5.setText(_translate("MainWindow", "Strona testowa Settings w trakcie budowy"))
         self.label_2.setText(_translate("MainWindow", "Przemek Bort 2023"))

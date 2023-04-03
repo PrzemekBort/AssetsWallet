@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>868</width>
-    <height>657</height>
+    <width>883</width>
+    <height>734</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -26,7 +26,52 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#centralwidget {
+	background-color: #474E68;
+}
+
+#label_2, #label, widget_6 {
+	color: rgb(255, 255, 255);
+}
+
+#MainStackedWidget QWidget{
+	border-radius: 15px;
+
+}
+
+#frame_2, #LeftMenuContainer {
+	background-color: #404258;
+}
+
+#LeftMenuContainer QPushButton {
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+#LeftMenuContainer QPushButton:hover {
+	background-color: #474E68;
+}
+
+#MainStackedWidget QPushButton {
+	color: white;
+	background-color: #50577A;
+	border:  1px solid white;
+}
+
+#MainStackedWidget QPushButton:hover {
+	background-color: #6B728E;
+}
+
+#frame_shares_titles {
+	background-color: #6B728E;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+
+
+
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="maximumSize">
@@ -36,7 +81,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true"/>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
@@ -57,7 +102,7 @@
     <item>
      <widget class="QWidget" name="LeftMenuContainer" native="true">
       <property name="styleSheet">
-       <string notr="true">background-color: #404258;</string>
+       <string notr="true"/>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
@@ -78,14 +123,7 @@
        <item>
         <widget class="QWidget" name="LeftMenuSubContainer" native="true">
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
-}
-
-QPushButton:hover {
-	background-color: #474E68;
-}</string>
+          <string notr="true"/>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="leftMargin">
@@ -437,7 +475,7 @@ QPushButton:hover {
     <item>
      <widget class="QFrame" name="MainContainer">
       <property name="styleSheet">
-       <string notr="true">background-color: #474E68;</string>
+       <string notr="true"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -480,7 +518,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Menu</string>
@@ -523,14 +561,15 @@ QPushButton:hover {
           <item>
            <widget class="QStackedWidget" name="MainStackedWidget">
             <property name="styleSheet">
-             <string notr="true">border-radius: 15px;
-
-</string>
+             <string notr="true"/>
             </property>
             <property name="currentIndex">
              <number>1</number>
             </property>
             <widget class="QWidget" name="page_menu">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <property name="spacing">
                <number>0</number>
@@ -550,7 +589,7 @@ QPushButton:hover {
               <item>
                <widget class="QWidget" name="widget_menu" native="true">
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true"/>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_7">
                  <item>
@@ -733,6 +772,7 @@ border-bottom-right-radius: 0px;
                  <string notr="true">background-color: #6B728E;
 border-top-left-radius: 0px;
 border-top-right-radius: 0px;
+
 </string>
                 </property>
                 <property name="frameShape">
@@ -760,10 +800,7 @@ border-top-right-radius: 0px;
                  <item>
                   <widget class="QScrollArea" name="scrollArea_gold">
                    <property name="styleSheet">
-                    <string notr="true">QScrollBar {
-	background-color: rgb(255, 0, 0);
-	border-radius: 1px;
-}</string>
+                    <string notr="true"/>
                    </property>
                    <property name="widgetResizable">
                     <bool>true</bool>
@@ -773,8 +810,8 @@ border-top-right-radius: 0px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>775</width>
-                      <height>481</height>
+                      <width>790</width>
+                      <height>558</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -814,20 +851,7 @@ border-top-right-radius: 0px;
               <item>
                <widget class="QFrame" name="frame_gold_buttons">
                 <property name="styleSheet">
-                 <string notr="true">QFrame {
-	background-color: #474E68;
-}
-
-QPushButton {
-	color: white;
-	background-color: #50577A;
-	border:  1px solid white;
-}
-
-QPushButton:hover {
-	
-	background-color: #6B728E;
-}</string>
+                 <string notr="true"/>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1059,6 +1083,7 @@ border-bottom-right-radius: 0px;</string>
                  <string notr="true">background-color: #6B728E;
 border-top-left-radius: 0px;
 border-top-right-radius: 0px;
+
 </string>
                 </property>
                 <property name="frameShape">
@@ -1102,8 +1127,8 @@ border-top-right-radius: 0px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>775</width>
-                      <height>492</height>
+                      <width>790</width>
+                      <height>569</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_18">
@@ -1149,20 +1174,7 @@ border-top-right-radius: 0px;
                  </sizepolicy>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">QFrame {
-	background-color: #474E68;
-}
-
-QPushButton {
-	color: white;
-	background-color: #50577A;
-	border:  1px solid white;
-}
-
-QPushButton:hover {
-	
-	background-color: #6B728E;
-}</string>
+                 <string notr="true"/>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1366,7 +1378,8 @@ border-bottom-right-radius: 0px;</string>
                 <property name="styleSheet">
                  <string notr="true">background-color: #6B728E;
 border-top-left-radius: 0px;
-border-top-right-radius: 0px;</string>
+border-top-right-radius: 0px;
+</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1409,8 +1422,8 @@ border-top-right-radius: 0px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>775</width>
-                      <height>492</height>
+                      <width>790</width>
+                      <height>569</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1462,20 +1475,7 @@ border-top-right-radius: 0px;</string>
                  <enum>Qt::PreventContextMenu</enum>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">QFrame {
-	background-color: #474E68;
-}
-
-QPushButton {
-	color: white;
-	background-color: #50577A;
-	border:  1px solid white;
-}
-
-QPushButton:hover {
-	
-	background-color: #6B728E;
-}</string>
+                 <string notr="true"/>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1617,7 +1617,8 @@ border-bottom-right-radius: 0px;</string>
                 <property name="styleSheet">
                  <string notr="true">background-color: #6B728E;
 border-top-left-radius: 0px;
-border-top-right-radius: 0px;</string>
+border-top-right-radius: 0px;
+</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1660,8 +1661,8 @@ border-top-right-radius: 0px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>775</width>
-                      <height>492</height>
+                      <width>790</width>
+                      <height>569</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -1701,26 +1702,13 @@ border-top-right-radius: 0px;</string>
               <item>
                <widget class="QFrame" name="frame_shares_buttons">
                 <property name="styleSheet">
-                 <string notr="true">QFrame {
-	background-color: #474E68;
-}
-
-QPushButton {
-	color: white;
-	background-color: #50577A;
-	border:  1px solid white;
-}
-
-QPushButton:hover {
-	
-	background-color: #6B728E;
-}</string>
+                 <string notr="true"/>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Sunken</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_8">
                  <item>
@@ -1741,6 +1729,9 @@ QPushButton:hover {
                     <font>
                      <pointsize>11</pointsize>
                     </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
                    </property>
                    <property name="text">
                     <string>Dodaj nową pozycję</string>
@@ -1766,6 +1757,9 @@ QPushButton:hover {
                      <pointsize>11</pointsize>
                     </font>
                    </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
                    <property name="text">
                     <string>Usuń pozycję</string>
                    </property>
@@ -1789,6 +1783,9 @@ QPushButton:hover {
                     <font>
                      <pointsize>11</pointsize>
                     </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
                    </property>
                    <property name="text">
                     <string>Transfer</string>
@@ -1820,7 +1817,7 @@ QPushButton:hover {
               <item>
                <widget class="QWidget" name="widget_5" native="true">
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true"/>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_33">
                  <item>
@@ -1873,7 +1870,7 @@ QPushButton:hover {
               <item>
                <widget class="QWidget" name="widget_6" native="true">
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true"/>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_21">
                  <item>
@@ -1914,7 +1911,7 @@ QPushButton:hover {
        <item>
         <widget class="QFrame" name="frame_2">
          <property name="styleSheet">
-          <string notr="true">background-color: #404258;</string>
+          <string notr="true"/>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -1942,7 +1939,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Przemek Bort 2023</string>

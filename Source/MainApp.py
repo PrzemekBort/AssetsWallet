@@ -62,11 +62,13 @@ class MainWindow(QMainWindow):
             "QWidget {\n"
             "    background-color: rgb(199, 199, 199);\n"
             "    border-radius: 15px;\n"
+            "    color: rgb(0, 0, 0);\n"
             "}")
         ALTERNATIVE_STYLESHEET = (
             "QWidget {\n"
             "    background-color: rgb(199, 199, 199);\n"
             "    border-radius: 15px;\n"
+            "    color: rgb(0, 0, 0);\n"
             "}\n"
             ".QWidget {\n"
             "     border: 2px solid white\n"

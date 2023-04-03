@@ -14,6 +14,38 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(500, 259)
         Form.setMaximumSize(QtCore.QSize(500, 16777215))
+        Form.setAcceptDrops(False)
+        Form.setStyleSheet("#Form {\n"
+"    background-color: #474E68;\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: #50577A;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid white;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #EC47ED;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: #50577A;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #6B728E\n"
+"}\n"
+"\n"
+"")
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -77,6 +109,12 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.lineEdit_name.sizePolicy().hasHeightForWidth())
         self.lineEdit_name.setSizePolicy(sizePolicy)
         self.lineEdit_name.setMaximumSize(QtCore.QSize(16755, 30))
+        self.lineEdit_name.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
+        self.lineEdit_name.setStyleSheet("")
+        self.lineEdit_name.setInputMask("")
+        self.lineEdit_name.setText("")
+        self.lineEdit_name.setFrame(False)
+        self.lineEdit_name.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
         self.lineEdit_name.setObjectName("lineEdit_name")
         self.horizontalLayout_2.addWidget(self.lineEdit_name)
         self.verticalLayout_2.addWidget(self.frame_3)
@@ -97,6 +135,7 @@ class Ui_Form(object):
         self.label_quantity.setObjectName("label_quantity")
         self.horizontalLayout_3.addWidget(self.label_quantity)
         self.lineEdit_quantity = QtWidgets.QLineEdit(parent=self.frame_4)
+        self.lineEdit_quantity.setFrame(False)
         self.lineEdit_quantity.setObjectName("lineEdit_quantity")
         self.horizontalLayout_3.addWidget(self.lineEdit_quantity)
         self.verticalLayout_2.addWidget(self.frame_4)
@@ -122,6 +161,7 @@ class Ui_Form(object):
         self.label_price.setObjectName("label_price")
         self.horizontalLayout_4.addWidget(self.label_price)
         self.lineEdit_price = QtWidgets.QLineEdit(parent=self.frame_5)
+        self.lineEdit_price.setFrame(False)
         self.lineEdit_price.setObjectName("lineEdit_price")
         self.horizontalLayout_4.addWidget(self.lineEdit_price)
         self.verticalLayout_2.addWidget(self.frame_5)
@@ -152,6 +192,8 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineEdit_date.sizePolicy().hasHeightForWidth())
         self.lineEdit_date.setSizePolicy(sizePolicy)
+        self.lineEdit_date.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
+        self.lineEdit_date.setFrame(False)
         self.lineEdit_date.setObjectName("lineEdit_date")
         self.horizontalLayout_5.addWidget(self.lineEdit_date)
         self.verticalLayout_2.addWidget(self.frame_6)
@@ -163,9 +205,14 @@ class Ui_Form(object):
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_7)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.pushButton_cancel = QtWidgets.QPushButton(parent=self.frame_7)
+        self.pushButton_cancel.setMinimumSize(QtCore.QSize(0, 25))
+        self.pushButton_cancel.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.pushButton_cancel.setFlat(False)
         self.pushButton_cancel.setObjectName("pushButton_cancel")
         self.horizontalLayout_6.addWidget(self.pushButton_cancel)
         self.pushButton_subbmit = QtWidgets.QPushButton(parent=self.frame_7)
+        self.pushButton_subbmit.setMinimumSize(QtCore.QSize(0, 25))
+        self.pushButton_subbmit.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_subbmit.setObjectName("pushButton_subbmit")
         self.horizontalLayout_6.addWidget(self.pushButton_subbmit)
         self.verticalLayout.addWidget(self.frame_7)
@@ -175,10 +222,10 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Nowe aktywo"))
         self.label_frametitle.setText(_translate("Form", "Nowe aktywo"))
         self.label_name.setText(_translate("Form", "Nazwa"))
-        self.label_quantity.setText(_translate("Form", "Ilośc"))
+        self.label_quantity.setText(_translate("Form", "Ilość"))
         self.label_price.setText(_translate("Form", "Cena"))
         self.label_date.setText(_translate("Form", "Data"))
         self.pushButton_cancel.setText(_translate("Form", "Anuluj"))
