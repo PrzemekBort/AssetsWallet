@@ -1,8 +1,6 @@
 from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtWidgets import QMainWindow, QDialog
-from GUI.Interfaces.MainWindow_Interface import Ui_MainWindow
-from GUI.Interfaces.InputWindow_Interface import Ui_Form
-from GUI.Interfaces import ErrorMessageBox_Interface
+import GUI.Interfaces as Gui
 
 
 class MainWindow(QMainWindow):
@@ -12,7 +10,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Gui.MainWindow_Interface.Ui_MainWindow()
         self.ui.setupUi(self)
 
         # Change page buttons setup
@@ -140,7 +138,7 @@ class MainWindow(QMainWindow):
         self.dataEnteredFlag = True
 
     # TODO dostosowanie funkcji do każdego typu Assetu
-    def addNewWidgetTo(self, destiny):
+    def addNewWidgetTo(self, layout: QtWidgets.QLayout):
         """Function calls new window to eneter data for new widget. Calls 'createNewWidget' with entered data
             and add it to destiny layout."""
 
@@ -155,14 +153,14 @@ class MainWindow(QMainWindow):
         if self.dataEnteredFlag:
             self.newWidget = self.createNewWidget(self.newWidgetName, str(self.newWidgetQuantity),
                                                   str(self.newWidgetPrice), self.newWidgetDate)
-            destiny.addWidget(self.newWidget)
+            layout.addWidget(self.newWidget)
 
-    def deleteWidgetFrom(self, destiny):
+    def deleteWidgetFrom(self, layout: QtWidgets.QLayout):
         """Function removes widget from layout and delete widget"""
         
         # Checking if any widget is clicked
         if self.currentClickedWidget:
-            destiny.removeWidget(self.currentClickedWidget)
+            layout.removeWidget(self.currentClickedWidget)
             self.currentClickedWidget.deleteLater()
             self.currentClickedWidget = None
 
@@ -173,7 +171,7 @@ class InputWindow(QDialog):
 
     def __init__(self):
         super(InputWindow, self).__init__()
-        self.ui = Ui_Form()
+        self.ui = Gui.InputWindow_Interface.Ui_Form()
         self.ui.setupUi(self)
 
         self.ui.pushButton_subbmit.clicked.connect(self.confirm)
@@ -188,8 +186,7 @@ class InputWindow(QDialog):
         except ValueError:
             self.ui.lineEdit_quantity.clear()
             self.ui.lineEdit_price.clear()
-            errorInfoWidget = ErrorMessageBox('Wprowadzone wartości są błędne. Ilośc i cena muszą być liczbami')
-            errorInfoWidget.exec()
+            ErrorMessageBox('Wprowadzone wartości są błędne. Ilośc i cena muszą być liczbami.').exec()
 
         else:
             values = [self.ui.lineEdit_name.text(), quantity,
@@ -202,7 +199,8 @@ class ErrorMessageBox(QDialog):
 
     def __init__(self, messageText):
         super(ErrorMessageBox, self).__init__()
-        self.ui = ErrorMessageBox_Interface.Ui_Form(messageText)
+        self.ui = Gui.ErrorMessageBox_Interface.Ui_Form()
         self.ui.setupUi(self)
+        self.ui.label.setText(messageText)
 
         self.ui.pushButton.clicked.connect(self.close)

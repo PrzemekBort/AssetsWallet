@@ -6,12 +6,44 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>122</height>
+    <width>550</width>
+    <height>120</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>120</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>550</width>
+    <height>120</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Form {
+	background-color: #474E68;
+}
+
+#label {
+	color: white;
+}
+
+QPushButton {
+    color: rgb(255, 255, 255);
+    background-color: #50577A;
+	border-radius: 3px;
+	border: 1px solid white;
+}
+
+QPushButton:hover {
+    background-color: #6B728E;
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -22,7 +54,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Wprowadzone wartości są błędne. Ilośc i cena muszą być liczbami</string>
+      <string>Message text</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -36,6 +68,12 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>20</height>
+      </size>
      </property>
      <property name="text">
       <string>OK</string>

@@ -10,13 +10,30 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
-
-    def __init__(self, messageText):
-        self.messageText = messageText
-
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(552, 122)
+        Form.resize(550, 120)
+        Form.setMinimumSize(QtCore.QSize(550, 120))
+        Form.setMaximumSize(QtCore.QSize(550, 120))
+        Form.setStyleSheet(
+            "#Form {\n"
+            "    background-color: #474E68;\n"
+            "}\n"
+            "\n"
+            "#label {\n"
+            "    color: white;\n"
+            "}\n"
+            "\n"
+            "QPushButton {\n"
+            "    color: rgb(255, 255, 255);\n"
+            "    background-color: #50577A;\n"
+            "    border-radius: 3px;\n"
+            "    border: 1px solid white;\n"
+            "}\n"
+            "\n"
+            "QPushButton:hover {\n"
+            "    background-color: #6B728E;\n"
+            "}")
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(parent=Form)
@@ -32,6 +49,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
         self.pushButton.setSizePolicy(sizePolicy)
+        self.pushButton.setMinimumSize(QtCore.QSize(100, 20))
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
 
@@ -41,5 +59,5 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", self.messageText))
+        self.label.setText(_translate("Form", "Message text"))
         self.pushButton.setText(_translate("Form", "OK"))
