@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'InputFormInterface.ui'
+# Form implementation generated from reading ui file 'InputWindow_Interface.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.1
 #

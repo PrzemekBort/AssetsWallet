@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'WrongDataInfoWidget.ui'
+# Form implementation generated from reading ui file 'ErrorMessageBox_Interface.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.1
 #
@@ -10,6 +10,10 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
+
+    def __init__(self, messageText):
+        self.messageText = messageText
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(552, 122)
@@ -37,5 +41,5 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "Wprowadzone wartości są błędne. Ilośc i cena muszą być liczbami"))
+        self.label.setText(_translate("Form", self.messageText))
         self.pushButton.setText(_translate("Form", "OK"))

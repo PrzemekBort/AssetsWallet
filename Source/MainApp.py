@@ -1,10 +1,8 @@
 from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtWidgets import QMainWindow, QDialog
-from GUI.Interfaces.Interface import Ui_MainWindow
-from GUI.Interfaces.InputFormInterface import Ui_Form
-from GUI.Interfaces import WrongDataInfoWidget
-
-# TODO ogarnąć Githuba
+from GUI.Interfaces.MainWindow_Interface import Ui_MainWindow
+from GUI.Interfaces.InputWindow_Interface import Ui_Form
+from GUI.Interfaces import ErrorMessageBox_Interface
 
 
 class MainWindow(QMainWindow):
@@ -54,9 +52,8 @@ class MainWindow(QMainWindow):
         self.ui.label.setText(_translate("MainWindow", newText))
         self.ui.MainStackedWidget.setCurrentIndex(newPageIndex)
 
-    def createNewWidget(self, name, quantity, total_cost, purchase_date, ID_key=0):
+    def createNewWidget(self, name, quantity, total_cost, purchase_date):
         """Function creates, setup and returns new widget."""
-        # TODO ogarnięcie ID_key, nie może być 0
 
         BASE_STYLESHEET = (
             "QWidget {\n"
@@ -76,7 +73,6 @@ class MainWindow(QMainWindow):
 
         newWidget = QtWidgets.QWidget()
         newWidget.setObjectName('newWidget')
-        newWidget.ID_key = ID_key
 
         newWidget.setMaximumSize(QtCore.QSize(16777215, 50))
         newWidget.setMinimumHeight(50)
@@ -134,7 +130,7 @@ class MainWindow(QMainWindow):
         return newWidget
 
     def setNewWidgetValues(self, values: list):
-        """Function takes and setup values entered in 'InputWidget' window. Values are forwarded
+        """Function takes and setup values entered in 'InputWindow' window. Values are forwarded
             to this function in list."""
 
         self.newWidgetName = str(values[0])
@@ -148,10 +144,10 @@ class MainWindow(QMainWindow):
         """Function calls new window to eneter data for new widget. Calls 'createNewWidget' with entered data
             and add it to destiny layout."""
 
-        # Flag to check if data from 'InputWidget' were forwarded correctly or window was just closed
+        # Flag to check if data from 'InputWindow' were forwarded correctly or window was just closed
         self.dataEnteredFlag = False
 
-        self.newWindow = InputWidget()
+        self.newWindow = InputWindow()
         self.newWindow.enteredData.connect(self.setNewWidgetValues)
         self.newWindow.exec()
 
@@ -171,12 +167,12 @@ class MainWindow(QMainWindow):
             self.currentClickedWidget = None
 
 
-class InputWidget(QDialog):
+class InputWindow(QDialog):
 
     enteredData = QtCore.pyqtSignal(list)
 
     def __init__(self):
-        super(InputWidget, self).__init__()
+        super(InputWindow, self).__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
@@ -192,7 +188,7 @@ class InputWidget(QDialog):
         except ValueError:
             self.ui.lineEdit_quantity.clear()
             self.ui.lineEdit_price.clear()
-            errorInfoWidget = WrongDataInfo()
+            errorInfoWidget = ErrorMessageBox('Wprowadzone wartości są błędne. Ilośc i cena muszą być liczbami')
             errorInfoWidget.exec()
 
         else:
@@ -202,11 +198,11 @@ class InputWidget(QDialog):
             self.close()
 
 
-class WrongDataInfo(QDialog):
+class ErrorMessageBox(QDialog):
 
-    def __init__(self):
-        super(WrongDataInfo, self).__init__()
-        self.ui = WrongDataInfoWidget.Ui_Form()
+    def __init__(self, messageText):
+        super(ErrorMessageBox, self).__init__()
+        self.ui = ErrorMessageBox_Interface.Ui_Form(messageText)
         self.ui.setupUi(self)
 
         self.ui.pushButton.clicked.connect(self.close)
