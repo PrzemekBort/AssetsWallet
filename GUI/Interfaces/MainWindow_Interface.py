@@ -13,75 +13,76 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(883, 734)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding,
-                                           QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setFocusPolicy(QtCore.Qt.FocusPolicy.ClickFocus)
         MainWindow.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.PreventContextMenu)
-        MainWindow.setStyleSheet(
-                "#centralwidget {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "#label_2, #label, widget_6 {\n"
-                "    color: rgb(255, 255, 255);\n"
-                "}\n"
-                "\n"
-                "#MainStackedWidget QWidget{\n"
-                "    border-radius: 15px;\n"
-                "    color: rgb(255, 255, 255);\n"
-                "}\n"
-                "\n"
-                "#frame_2, #LeftMenuContainer {\n"
-                "    background-color: #404258;\n"
-                "}\n"
-                "\n"
-                "#LeftMenuContainer QPushButton {\n"
-                "    border-top-left-radius: 15px;\n"
-                "    border-bottom-left-radius: 15px;\n"
-                "}\n"
-                "\n"
-                "#LeftMenuContainer QPushButton:hover {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "#MainStackedWidget QPushButton {\n"
-                "    color: white;\n"
-                "    background-color: #50577A;\n"
-                "    border:  1px solid white;\n"
-                "}\n"
-                "\n"
-                "#MainStackedWidget QPushButton:hover {\n"
-                "    background-color: #6B728E;\n"
-                "}\n"
-                "\n"
-                "#frame_shares_titles {\n"
-                "    background-color: #6B728E;\n"
-                "    border-bottom-left-radius: 0px;\n"
-                "    border-bottom-right-radius: 0px;\n"
-                "}\n"
-                "\n"
-                "\n"
-                "\n"
-                "\n"
-                "")
+        MainWindow.setStyleSheet("#centralwidget {\n"
+"    background-color: #474E68;\n"
+"}\n"
+"\n"
+"#label_2, #label, widget_6 {\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"#MainStackedWidget QWidget{\n"
+"    border-radius: 15px;\n"
+"\n"
+"}\n"
+"\n"
+"#frame_2, #LeftMenuContainer {\n"
+"    background-color: #404258;\n"
+"}\n"
+"\n"
+"#LeftMenuContainer QPushButton {\n"
+"    border-top-left-radius: 15px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"}\n"
+"\n"
+"#LeftMenuContainer QPushButton:hover {\n"
+"    background-color: #474E68;\n"
+"}\n"
+"\n"
+"#MainStackedWidget QPushButton {\n"
+"    color: white;\n"
+"    background-color: #50577A;\n"
+"    border:  1px solid white;\n"
+"}\n"
+"\n"
+"#MainStackedWidget QPushButton:hover {\n"
+"    background-color: #6B728E;\n"
+"}\n"
+"\n"
+"#frame_shares_titles {\n"
+"    background-color: #6B728E;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setMaximumSize(QtCore.QSize(167555, 167555))
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.LeftMenuContainer = QtWidgets.QWidget(parent=self.centralwidget)
+        self.LeftMenuContainer.setStyleSheet("")
         self.LeftMenuContainer.setObjectName("LeftMenuContainer")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.LeftMenuContainer)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.LeftMenuSubContainer = QtWidgets.QWidget(parent=self.LeftMenuContainer)
+        self.LeftMenuSubContainer.setStyleSheet("")
         self.LeftMenuSubContainer.setObjectName("LeftMenuSubContainer")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.LeftMenuSubContainer)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -187,8 +188,7 @@ class Ui_MainWindow(object):
         self.pushButton_cash.setObjectName("pushButton_cash")
         self.verticalLayout_3.addWidget(self.pushButton_cash)
         self.verticalLayout_2.addWidget(self.frame_assets, 0, QtCore.Qt.AlignmentFlag.AlignTop)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
-                                            QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_2.addItem(spacerItem1)
         self.frame_settings = QtWidgets.QFrame(parent=self.LeftMenuSubContainer)
         self.frame_settings.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
@@ -226,10 +226,12 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_3.setContentsMargins(-1, 7, -1, 7)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.label = QtWidgets.QLabel(parent=self.frame)
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setFamily("Calibri")
+        font.setPointSize(24)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
@@ -239,8 +241,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.label)
         self.verticalLayout_4.addWidget(self.frame)
         self.MainContentContainer = QtWidgets.QWidget(parent=self.MainContainer)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.MinimumExpanding,
-                                           QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.MinimumExpanding, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.MainContentContainer.sizePolicy().hasHeightForWidth())
@@ -267,8 +268,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.widget_menu)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.label_3 = QtWidgets.QLabel(parent=self.widget_menu)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred,
-                                           QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
@@ -278,8 +278,7 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.verticalLayout_7.addWidget(self.label_3)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
-                                            QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_7.addItem(spacerItem2)
         self.verticalLayout_6.addWidget(self.widget_menu)
         self.MainStackedWidget.addWidget(self.page_menu)
@@ -291,11 +290,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_16.setObjectName("verticalLayout_16")
         self.frame_gold_titles = QtWidgets.QFrame(parent=self.page_gold)
         self.frame_gold_titles.setMinimumSize(QtCore.QSize(0, 0))
-        self.frame_gold_titles.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-bottom-left-radius: 0px;\n"
-                "border-bottom-right-radius: 0px;\n"
-                "")
+        self.frame_gold_titles.setStyleSheet("background-color: #6B728E;\n"
+"border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;\n"
+"color:white;\n"
+"")
         self.frame_gold_titles.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_gold_titles.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_gold_titles.setObjectName("frame_gold_titles")
@@ -309,8 +308,14 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_gold_name.sizePolicy().hasHeightForWidth())
         self.label_gold_name.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
         font.setWeight(75)
+        font.setStrikeOut(False)
+        font.setKerning(True)
         self.label_gold_name.setFont(font)
         self.label_gold_name.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_gold_name.setObjectName("label_gold_name")
@@ -322,8 +327,14 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_gold_quantity.sizePolicy().hasHeightForWidth())
         self.label_gold_quantity.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
         font.setWeight(75)
+        font.setStrikeOut(False)
+        font.setKerning(True)
         self.label_gold_quantity.setFont(font)
         self.label_gold_quantity.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_gold_quantity.setObjectName("label_gold_quantity")
@@ -335,8 +346,14 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_gold_buyprice.sizePolicy().hasHeightForWidth())
         self.label_gold_buyprice.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
         font.setWeight(75)
+        font.setStrikeOut(False)
+        font.setKerning(True)
         self.label_gold_buyprice.setFont(font)
         self.label_gold_buyprice.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_gold_buyprice.setObjectName("label_gold_buyprice")
@@ -348,26 +365,30 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label_gold_date.sizePolicy().hasHeightForWidth())
         self.label_gold_date.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
         font.setWeight(75)
+        font.setStrikeOut(False)
+        font.setKerning(True)
         self.label_gold_date.setFont(font)
         self.label_gold_date.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_gold_date.setObjectName("label_gold_date")
         self.horizontalLayout_9.addWidget(self.label_gold_date)
         self.verticalLayout_16.addWidget(self.frame_gold_titles)
         self.frame_gold_scrollArea = QtWidgets.QFrame(parent=self.page_gold)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred,
-                                           QtWidgets.QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.MinimumExpanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_gold_scrollArea.sizePolicy().hasHeightForWidth())
         self.frame_gold_scrollArea.setSizePolicy(sizePolicy)
-        self.frame_gold_scrollArea.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-top-left-radius: 0px;\n"
-                "border-top-right-radius: 0px;\n"
-                "\n"
-                "")
+        self.frame_gold_scrollArea.setStyleSheet("background-color: #6B728E;\n"
+"border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;\n"
+"\n"
+"")
         self.frame_gold_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_gold_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_gold_scrollArea.setObjectName("frame_gold_scrollArea")
@@ -380,7 +401,7 @@ class Ui_MainWindow(object):
         self.scrollArea_gold.setWidgetResizable(True)
         self.scrollArea_gold.setObjectName("scrollArea_gold")
         self.scrollAreaWidgetContents_gold = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_gold.setGeometry(QtCore.QRect(0, 0, 790, 558))
+        self.scrollAreaWidgetContents_gold.setGeometry(QtCore.QRect(0, 0, 790, 535))
         self.scrollAreaWidgetContents_gold.setObjectName("scrollAreaWidgetContents_gold")
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_gold)
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
@@ -447,10 +468,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.frame_crypto_titles = QtWidgets.QFrame(parent=self.page_crypto)
-        self.frame_crypto_titles.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-bottom-left-radius: 0px;\n"
-                "border-bottom-right-radius: 0px;")
+        self.frame_crypto_titles.setStyleSheet("background-color: #6B728E;\n"
+"border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;\n"
+"color:white;")
         self.frame_crypto_titles.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_crypto_titles.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_crypto_titles.setObjectName("frame_crypto_titles")
@@ -459,6 +480,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.label_crypto_name = QtWidgets.QLabel(parent=self.frame_crypto_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_crypto_name.setFont(font)
@@ -467,6 +490,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.label_crypto_name)
         self.label_crypto_quantity = QtWidgets.QLabel(parent=self.frame_crypto_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_crypto_quantity.setFont(font)
@@ -475,6 +500,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.label_crypto_quantity)
         self.label_crypto_buyprice = QtWidgets.QLabel(parent=self.frame_crypto_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_crypto_buyprice.setFont(font)
@@ -483,6 +510,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.label_crypto_buyprice)
         self.label_crypto_rate = QtWidgets.QLabel(parent=self.frame_crypto_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_crypto_rate.setFont(font)
@@ -491,6 +520,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.label_crypto_rate)
         self.label_crypto_value = QtWidgets.QLabel(parent=self.frame_crypto_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_crypto_value.setFont(font)
@@ -499,12 +530,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.label_crypto_value)
         self.verticalLayout_10.addWidget(self.frame_crypto_titles)
         self.frame_crypto_scrollArea = QtWidgets.QFrame(parent=self.page_crypto)
-        self.frame_crypto_scrollArea.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-top-left-radius: 0px;\n"
-                "border-top-right-radius: 0px;\n"
-                "\n"
-                "")
+        self.frame_crypto_scrollArea.setStyleSheet("background-color: #6B728E;\n"
+"border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;\n"
+"\n"
+"")
         self.frame_crypto_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_crypto_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_crypto_scrollArea.setObjectName("frame_crypto_scrollArea")
@@ -516,11 +546,10 @@ class Ui_MainWindow(object):
         self.scrollArea_crypto.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_crypto.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_crypto.setWidgetResizable(True)
-        self.scrollArea_crypto.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading |
-                                            QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
+        self.scrollArea_crypto.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_crypto.setObjectName("scrollArea_crypto")
         self.scrollAreaWidgetContents_crypto = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_crypto.setGeometry(QtCore.QRect(0, 0, 790, 569))
+        self.scrollAreaWidgetContents_crypto.setGeometry(QtCore.QRect(0, 0, 790, 546))
         self.scrollAreaWidgetContents_crypto.setObjectName("scrollAreaWidgetContents_crypto")
         self.verticalLayout_18 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_crypto)
         self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
@@ -581,10 +610,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName("verticalLayout_14")
         self.frame_currency_titles = QtWidgets.QFrame(parent=self.page_currency)
-        self.frame_currency_titles.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-bottom-left-radius: 0px;\n"
-                "border-bottom-right-radius: 0px;")
+        self.frame_currency_titles.setStyleSheet("background-color: #6B728E;\n"
+"border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;\n"
+"color:white;")
         self.frame_currency_titles.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_currency_titles.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_currency_titles.setObjectName("frame_currency_titles")
@@ -594,6 +623,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.label_currency_name = QtWidgets.QLabel(parent=self.frame_currency_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_currency_name.setFont(font)
@@ -602,6 +633,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.addWidget(self.label_currency_name)
         self.label_currency_quantity = QtWidgets.QLabel(parent=self.frame_currency_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_currency_quantity.setFont(font)
@@ -610,6 +643,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.addWidget(self.label_currency_quantity)
         self.label_currency_rate = QtWidgets.QLabel(parent=self.frame_currency_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_currency_rate.setFont(font)
@@ -618,6 +653,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.addWidget(self.label_currency_rate)
         self.label_currency_value = QtWidgets.QLabel(parent=self.frame_currency_titles)
         font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label_currency_value.setFont(font)
@@ -626,11 +663,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.addWidget(self.label_currency_value)
         self.verticalLayout_14.addWidget(self.frame_currency_titles)
         self.frame_currency_scrollArea = QtWidgets.QFrame(parent=self.page_currency)
-        self.frame_currency_scrollArea.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-top-left-radius: 0px;\n"
-                "border-top-right-radius: 0px;\n"
-                "")
+        self.frame_currency_scrollArea.setStyleSheet("background-color: #6B728E;\n"
+"border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;\n"
+"")
         self.frame_currency_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_currency_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_currency_scrollArea.setObjectName("frame_currency_scrollArea")
@@ -642,11 +678,10 @@ class Ui_MainWindow(object):
         self.scrollArea_currency.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_currency.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_currency.setWidgetResizable(True)
-        self.scrollArea_currency.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading |
-                                              QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
+        self.scrollArea_currency.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_currency.setObjectName("scrollArea_currency")
         self.scrollAreaWidgetContents_currency = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_currency.setGeometry(QtCore.QRect(0, 0, 790, 569))
+        self.scrollAreaWidgetContents_currency.setGeometry(QtCore.QRect(0, 0, 790, 546))
         self.scrollAreaWidgetContents_currency.setObjectName("scrollAreaWidgetContents_currency")
         self.verticalLayout_19 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_currency)
         self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
@@ -663,8 +698,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_20.addWidget(self.scrollArea_currency)
         self.verticalLayout_14.addWidget(self.frame_currency_scrollArea)
         self.frame_currency_buttons = QtWidgets.QFrame(parent=self.page_currency)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding,
-                                           QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_currency_buttons.sizePolicy().hasHeightForWidth())
@@ -710,10 +744,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
         self.frame_shares_titles = QtWidgets.QFrame(parent=self.page_shares)
-        self.frame_shares_titles.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-bottom-left-radius: 0px;\n"
-                "border-bottom-right-radius: 0px;")
+        self.frame_shares_titles.setStyleSheet("background-color: #6B728E;\n"
+"border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;\n"
+"color:white;")
         self.frame_shares_titles.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_shares_titles.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_shares_titles.setObjectName("frame_shares_titles")
@@ -728,11 +762,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.addWidget(self.label_9)
         self.verticalLayout_11.addWidget(self.frame_shares_titles)
         self.frame_shares_scrollArea = QtWidgets.QFrame(parent=self.page_shares)
-        self.frame_shares_scrollArea.setStyleSheet(
-                "background-color: #6B728E;\n"
-                "border-top-left-radius: 0px;\n"
-                "border-top-right-radius: 0px;\n"
-                "")
+        self.frame_shares_scrollArea.setStyleSheet("background-color: #6B728E;\n"
+"border-top-left-radius: 0px;\n"
+"border-top-right-radius: 0px;\n"
+"")
         self.frame_shares_scrollArea.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_shares_scrollArea.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_shares_scrollArea.setObjectName("frame_shares_scrollArea")
@@ -744,8 +777,7 @@ class Ui_MainWindow(object):
         self.scrollArea_shares.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.scrollArea_shares.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_shares.setWidgetResizable(True)
-        self.scrollArea_shares.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading |
-                                            QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
+        self.scrollArea_shares.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.scrollArea_shares.setObjectName("scrollArea_shares")
         self.scrollAreaWidgetContents_shares = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_shares.setGeometry(QtCore.QRect(0, 0, 790, 569))
@@ -817,8 +849,7 @@ class Ui_MainWindow(object):
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.verticalLayout_33.addWidget(self.label_4)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
-                                            QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_33.addItem(spacerItem3)
         self.verticalLayout_12.addWidget(self.widget_5)
         self.MainStackedWidget.addWidget(self.page_cash)
@@ -839,8 +870,7 @@ class Ui_MainWindow(object):
         self.label_5.setFont(font)
         self.label_5.setObjectName("label_5")
         self.verticalLayout_21.addWidget(self.label_5)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
-                                            QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_21.addItem(spacerItem4)
         self.verticalLayout_13.addWidget(self.widget_6)
         self.MainStackedWidget.addWidget(self.page_settings)
@@ -868,7 +898,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.MainStackedWidget.setCurrentIndex(4)
+        self.MainStackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -903,6 +933,6 @@ class Ui_MainWindow(object):
         self.pushButton_shares_add.setText(_translate("MainWindow", "Dodaj nową pozycję"))
         self.pushButton_shares_delete.setText(_translate("MainWindow", "Usuń pozycję"))
         self.pushButton_shares_transfer.setText(_translate("MainWindow", "Transfer"))
-        self.label_4.setText(_translate("MainWindow", "Strona testowa Cash. Jeszcze nie wiem, jaki tu będzie layout"))
+        self.label_4.setText(_translate("MainWindow", "Strona testowa Cash. Jeszcze nie wiem jaki tu będzie layout"))
         self.label_5.setText(_translate("MainWindow", "Strona testowa Settings w trakcie budowy"))
         self.label_2.setText(_translate("MainWindow", "Przemek Bort 2023"))

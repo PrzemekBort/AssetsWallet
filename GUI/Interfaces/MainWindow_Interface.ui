@@ -189,7 +189,7 @@
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>Icons/icons8-squared-menu-100.png</normalon>
+                 <normalon>:/Icons/Icons/icons8-squared-menu-50.png</normalon>
                 </iconset>
                </property>
                <property name="iconSize">
@@ -508,11 +508,18 @@
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="topMargin">
+           <number>7</number>
+          </property>
+          <property name="bottomMargin">
+           <number>7</number>
+          </property>
           <item>
            <widget class="QLabel" name="label">
             <property name="font">
              <font>
-              <pointsize>15</pointsize>
+              <family>Calibri</family>
+              <pointsize>24</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -564,7 +571,7 @@
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_menu">
              <property name="styleSheet">
@@ -657,6 +664,7 @@
                  <string notr="true">background-color: #6B728E;
 border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;
+color:white;
 </string>
                 </property>
                 <property name="frameShape">
@@ -679,8 +687,14 @@ border-bottom-right-radius: 0px;
                    </property>
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
@@ -701,8 +715,14 @@ border-bottom-right-radius: 0px;
                    </property>
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
@@ -723,8 +743,14 @@ border-bottom-right-radius: 0px;
                    </property>
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
@@ -745,8 +771,14 @@ border-bottom-right-radius: 0px;
                    </property>
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
@@ -810,8 +842,8 @@ border-top-right-radius: 0px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>790</width>
-                      <height>558</height>
+                      <width>100</width>
+                      <height>30</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -979,7 +1011,8 @@ border-top-right-radius: 0px;
                 <property name="styleSheet">
                  <string notr="true">background-color: #6B728E;
 border-bottom-left-radius: 0px;
-border-bottom-right-radius: 0px;</string>
+border-bottom-right-radius: 0px;
+color:white;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -998,6 +1031,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_crypto_name">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1014,6 +1049,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_crypto_quantity">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1030,6 +1067,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_crypto_buyprice">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1046,6 +1085,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_crypto_rate">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1062,6 +1103,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_crypto_value">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1128,7 +1171,7 @@ border-top-right-radius: 0px;
                       <x>0</x>
                       <y>0</y>
                       <width>790</width>
-                      <height>569</height>
+                      <height>546</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_18">
@@ -1282,7 +1325,8 @@ border-top-right-radius: 0px;
                 <property name="styleSheet">
                  <string notr="true">background-color: #6B728E;
 border-bottom-left-radius: 0px;
-border-bottom-right-radius: 0px;</string>
+border-bottom-right-radius: 0px;
+color:white;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1310,6 +1354,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_currency_name">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1326,6 +1372,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_currency_quantity">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1342,6 +1390,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_currency_rate">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1358,6 +1408,8 @@ border-bottom-right-radius: 0px;</string>
                   <widget class="QLabel" name="label_currency_value">
                    <property name="font">
                     <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
                      <weight>75</weight>
                      <bold>true</bold>
                     </font>
@@ -1423,7 +1475,7 @@ border-top-right-radius: 0px;
                       <x>0</x>
                       <y>0</y>
                       <width>790</width>
-                      <height>569</height>
+                      <height>546</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1583,7 +1635,8 @@ border-top-right-radius: 0px;
                 <property name="styleSheet">
                  <string notr="true">background-color: #6B728E;
 border-bottom-left-radius: 0px;
-border-bottom-right-radius: 0px;</string>
+border-bottom-right-radius: 0px;
+color:white;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1661,8 +1714,8 @@ border-top-right-radius: 0px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>790</width>
-                      <height>569</height>
+                      <width>100</width>
+                      <height>30</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_22">

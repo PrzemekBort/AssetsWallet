@@ -1,17 +1,18 @@
 from PyQt6 import QtCore, QtWidgets, QtGui
-from PyQt6.QtWidgets import QMainWindow, QDialog
-import GUI.Interfaces as Gui
+from PyQt6.QtWidgets import QMainWindow, QDialog, QWidget
+from GUI.Interfaces import MainWindow_Interface, InputWindow_Interface, ErrorMessageBox_Interface
+import GUI.Interfaces.Testowy as test
 
 
 class MainWindow(QMainWindow):
 
-    # Reference to current clicked widget in scrollArea
-    currentClickedWidget = None
-
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.ui = Gui.MainWindow_Interface.Ui_MainWindow()
+        self.ui = MainWindow_Interface.Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # Reference to current clicked widget in scrollArea
+        self.currentClickedWidget = None
 
         # Change page buttons setup
         self.ui.pushButton_menu.clicked.connect(lambda: self.changePage('Menu', 0))
@@ -45,87 +46,9 @@ class MainWindow(QMainWindow):
     def changePage(self, newText: str, newPageIndex: int):
         """The function changes the currently displayed page in a MainStackedWidget
             and text in main label."""
-        
-        _translate = QtCore.QCoreApplication.translate
-        self.ui.label.setText(_translate("MainWindow", newText))
+
+        self.ui.label.setText(newText)
         self.ui.MainStackedWidget.setCurrentIndex(newPageIndex)
-
-    def createNewWidget(self, name, quantity, total_cost, purchase_date):
-        """Function creates, setup and returns new widget."""
-
-        BASE_STYLESHEET = (
-            "QWidget {\n"
-            "    background-color: rgb(199, 199, 199);\n"
-            "    border-radius: 15px;\n"
-            "    color: rgb(0, 0, 0);\n"
-            "}")
-        ALTERNATIVE_STYLESHEET = (
-            "QWidget {\n"
-            "    background-color: rgb(199, 199, 199);\n"
-            "    border-radius: 15px;\n"
-            "    color: rgb(0, 0, 0);\n"
-            "}\n"
-            ".QWidget {\n"
-            "     border: 2px solid white\n"
-            "}")
-
-        newWidget = QtWidgets.QWidget()
-        newWidget.setObjectName('newWidget')
-
-        newWidget.setMaximumSize(QtCore.QSize(16777215, 50))
-        newWidget.setMinimumHeight(50)
-        newWidget.setStyleSheet(BASE_STYLESHEET)
-        newWidget.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-
-        labelName = QtWidgets.QLabel(parent=newWidget)
-        labelQuantity = QtWidgets.QLabel(parent=newWidget)
-        labelPrice = QtWidgets.QLabel(parent=newWidget)
-        labelDate = QtWidgets.QLabel(parent=newWidget)
-
-        labelName.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        labelQuantity.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        labelPrice.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        labelDate.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-
-        labelName.setText(name)
-        labelQuantity.setText(quantity)
-        labelPrice.setText(total_cost)
-        labelDate.setText(purchase_date)
-
-        horizontalLayout = QtWidgets.QHBoxLayout(newWidget)
-        horizontalLayout.addWidget(labelName)
-        horizontalLayout.addWidget(labelQuantity)
-        horizontalLayout.addWidget(labelPrice)
-        horizontalLayout.addWidget(labelDate)
-
-        # Variable opposite to the currently set stylesheet version. Variable can be only 0 or 1
-        newWidget.not_current_style = 1
-        
-        def clickEvent(version: int):
-            """Function change current stylesheet when widget is clicked. 
-                Changes stylesheet to based of last clicked widget also"""
-            
-            # Change stylesheet to based
-            if version == 0:
-                newWidget.setStyleSheet(BASE_STYLESHEET)
-                newWidget.not_current_style = 1
-                self.currentClickedWidget = None
-
-            elif version == 1:
-                # Change stylesheet to alternative for clicked widget
-                newWidget.setStyleSheet(ALTERNATIVE_STYLESHEET)
-                newWidget.not_current_style = 0
-
-                # and to based for last clicked widget
-                if self.currentClickedWidget:
-                    self.currentClickedWidget.setStyleSheet(BASE_STYLESHEET)
-                    self.currentClickedWidget.not_current_style = 1
-
-                self.currentClickedWidget = newWidget
-
-        newWidget.mouseReleaseEvent = lambda event: clickEvent(newWidget.not_current_style)
-
-        return newWidget
 
     def setNewWidgetValues(self, values: list):
         """Function takes and setup values entered in 'InputWindow' window. Values are forwarded
@@ -151,8 +74,10 @@ class MainWindow(QMainWindow):
 
         # When data are forwarded correctly, flag is true and new widget can be created
         if self.dataEnteredFlag:
-            self.newWidget = self.createNewWidget(self.newWidgetName, str(self.newWidgetQuantity),
-                                                  str(self.newWidgetPrice), self.newWidgetDate)
+            self.newWidget = GoldWidget(self.newWidgetName, self.newWidgetQuantity,
+                                        self.newWidgetPrice, self.newWidgetDate)
+            self.newWidget.clickedWidget.connect(self.changeClickedWidget)
+
             layout.addWidget(self.newWidget)
 
     def deleteWidgetFrom(self, layout: QtWidgets.QLayout):
@@ -164,6 +89,17 @@ class MainWindow(QMainWindow):
             self.currentClickedWidget.deleteLater()
             self.currentClickedWidget = None
 
+    def changeClickedWidget(self, lista):
+
+        if lista[0]:
+            if self.currentClickedWidget:
+                self.currentClickedWidget.setBasedStylesheet()
+
+            self.currentClickedWidget = lista[1]
+
+        else:
+            self.currentClickedWidget = None
+
 
 class InputWindow(QDialog):
 
@@ -171,10 +107,11 @@ class InputWindow(QDialog):
 
     def __init__(self):
         super(InputWindow, self).__init__()
-        self.ui = Gui.InputWindow_Interface.Ui_Form()
+        self.ui = InputWindow_Interface.Ui_Form()
         self.ui.setupUi(self)
 
         self.ui.pushButton_subbmit.clicked.connect(self.confirm)
+        self.ui.pushButton_cancel.clicked.connect(self.close)
 
     def confirm(self):
         # TODO Dodać komunikat gdy któraś rubryka jest pusta
@@ -199,8 +136,77 @@ class ErrorMessageBox(QDialog):
 
     def __init__(self, messageText):
         super(ErrorMessageBox, self).__init__()
-        self.ui = Gui.ErrorMessageBox_Interface.Ui_Form()
+        self.ui = ErrorMessageBox_Interface.Ui_Form()
         self.ui.setupUi(self)
         self.ui.label.setText(messageText)
 
         self.ui.pushButton.clicked.connect(self.close)
+
+
+class AssetWidget(QWidget):
+
+    clickedWidget = QtCore.pyqtSignal(list)
+
+    def __init__(self):
+        super(AssetWidget, self).__init__()
+        # Opposite of current stylesheet. BASE=0, ALTERNATIVE=1.
+        #   example: if current stylesheet is BASE, self.notCurrentStyle=1
+        self.notCurrentStyle = 1
+
+    def mouseReleaseEvent(self, a0: QtGui.QMouseEvent):
+        self.clickEvent(self.notCurrentStyle)
+
+    def clickEvent(self, style: int):
+        """Function change current stylesheet when widget is clicked
+        and emit signal for MainWindow to change previous clicked widget to BASE stylesheet."""
+
+        if style == 0:
+            self.setBasedStylesheet()
+            self.clickedWidget.emit([0, self])
+
+        elif style == 1:
+            # Change stylesheet to alternative for clicked widget
+            self.setAlternativeStylesheet()
+            self.clickedWidget.emit([1, self])
+
+    def setBasedStylesheet(self):
+
+        BASE_STYLESHEET = (
+            "QFrame {\n"
+            "    background-color: rgb(199, 199, 199);\n"
+            "    color: rgb(0, 0, 0);\n"
+            "    border-radius: 15px;\n"
+            "}\n"
+            ".QFrame {\n"
+            "    border: 2px solid rgb(199, 199, 199);\n"
+            "}")
+
+        self.setStyleSheet(BASE_STYLESHEET)
+        self.notCurrentStyle = 1
+
+    def setAlternativeStylesheet(self):
+
+        ALTERNATIVE_STYLESHEET = (
+            "QFrame {\n"
+            "    background-color: rgb(199, 199, 199);\n"
+            "    border-radius: 15px;\n"
+            "    color: rgb(0, 0, 0);\n"
+            "}\n"
+            ".QFrame {\n"
+            "    border: 2px solid white\n"
+            "}")
+        self.setStyleSheet(ALTERNATIVE_STYLESHEET)
+        self.notCurrentStyle = 0
+
+
+class GoldWidget(AssetWidget):
+
+    def __init__(self, name, quantity, price, date):
+        super(GoldWidget, self).__init__()
+        self.ui = test.Ui_Form()
+        self.ui.setupUi(self)
+
+        self.ui.NazwaLabel.setText(name)
+        self.ui.IloscLabel.setText(quantity)
+        self.ui.CenaLabel.setText(price)
+        self.ui.DataLabel.setText(date)
