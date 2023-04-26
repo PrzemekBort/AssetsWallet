@@ -74,8 +74,7 @@ class MainWindow(QMainWindow):
 
         # When data are forwarded correctly, flag is true and new widget can be created
         if self.dataEnteredFlag:
-            self.newWidget = GoldWidget(self.newWidgetName, self.newWidgetQuantity,
-                                        self.newWidgetPrice, self.newWidgetDate)
+            self.newWidget = GoldWidget(self.newWidgetName, self.newWidgetQuantity, self.newWidgetPrice)
             self.newWidget.clickedWidget.connect(self.changeClickedWidget)
 
             layout.addWidget(self.newWidget)
@@ -201,12 +200,13 @@ class AssetWidget(QWidget):
 
 class GoldWidget(AssetWidget):
 
-    def __init__(self, name, quantity, price, date):
+    def __init__(self, name, quantity, value):
         super(GoldWidget, self).__init__()
         self.ui = test.Ui_Form()
         self.ui.setupUi(self)
 
-        self.ui.NazwaLabel.setText(name)
-        self.ui.IloscLabel.setText(quantity)
-        self.ui.CenaLabel.setText(price)
-        self.ui.DataLabel.setText(date)
+        self.ui.nameLabel.setText(name)
+        self.ui.quantityLabel.setText(quantity)
+        self.ui.valueLabel.setText(value)
+        self.ui.priceLabel.setText('No data')
+

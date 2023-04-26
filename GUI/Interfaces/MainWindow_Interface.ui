@@ -678,7 +678,7 @@ color:white;
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_gold_name">
+                  <widget class="QLabel" name="labelGoldName">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                      <horstretch>0</horstretch>
@@ -698,7 +698,7 @@ color:white;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Nazwa</string>
+                    <string>Name</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -706,7 +706,7 @@ color:white;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_gold_quantity">
+                  <widget class="QLabel" name="labelGoldQuantity">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                      <horstretch>0</horstretch>
@@ -726,7 +726,7 @@ color:white;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Ilość</string>
+                    <string>Quantity</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -734,7 +734,7 @@ color:white;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_gold_buyprice">
+                  <widget class="QLabel" name="labelGoldValue">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                      <horstretch>0</horstretch>
@@ -754,7 +754,7 @@ color:white;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Cena kupna</string>
+                    <string>Value</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -762,7 +762,25 @@ color:white;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_gold_date">
+                  <widget class="QLabel" name="labelGoldCurrentPrice">
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Current price</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelGoldProfitLoss">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                      <horstretch>0</horstretch>
@@ -782,7 +800,7 @@ color:white;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Data</string>
+                    <string>Profit / Loss</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -842,8 +860,8 @@ border-top-right-radius: 0px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>100</width>
-                      <height>30</height>
+                      <width>790</width>
+                      <height>535</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -1021,24 +1039,28 @@ color:white;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_10">
-                 <property name="topMargin">
-                  <number>11</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
                  <item>
-                  <widget class="QLabel" name="label_crypto_name">
+                  <widget class="QLabel" name="labelCryptoName">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Nazwa</string>
+                    <string>Name</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1046,17 +1068,27 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_crypto_quantity">
+                  <widget class="QLabel" name="labelCryptoQuantity">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Ilość</string>
+                    <string>Quantity</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1064,17 +1096,27 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_crypto_buyprice">
+                  <widget class="QLabel" name="labelCryptoValue">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Cena kupna</string>
+                    <string>Value</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1082,7 +1124,7 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_crypto_rate">
+                  <widget class="QLabel" name="labelCryptoCurrentPrice">
                    <property name="font">
                     <font>
                      <family>Calibri</family>
@@ -1092,7 +1134,7 @@ color:white;</string>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Kurs średni kupna</string>
+                    <string>Current price</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1100,17 +1142,27 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_crypto_value">
+                  <widget class="QLabel" name="labelCryptoProfitLoss">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Wartość</string>
+                    <string>Profit / Loss</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1171,7 +1223,7 @@ border-top-right-radius: 0px;
                       <x>0</x>
                       <y>0</y>
                       <width>790</width>
-                      <height>546</height>
+                      <height>535</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_18">
@@ -1335,33 +1387,28 @@ color:white;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_11">
-                 <property name="spacing">
-                  <number>7</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>11</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>11</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>11</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
                  <item>
-                  <widget class="QLabel" name="label_currency_name">
+                  <widget class="QLabel" name="labelCurrencyName">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Waluta</string>
+                    <string>Name</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1369,17 +1416,27 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_currency_quantity">
+                  <widget class="QLabel" name="labelCurrencyQuantity">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Ilość</string>
+                    <string>Quantity</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1387,17 +1444,27 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_currency_rate">
+                  <widget class="QLabel" name="labelCurrencyValue">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="font">
                     <font>
                      <family>Calibri</family>
                      <pointsize>14</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Kurs średni kupna</string>
+                    <string>Value</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1405,7 +1472,7 @@ color:white;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_currency_value">
+                  <widget class="QLabel" name="labelCurrencyCurrentPrice">
                    <property name="font">
                     <font>
                      <family>Calibri</family>
@@ -1415,7 +1482,35 @@ color:white;</string>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Wartość</string>
+                    <string>Current price</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelCurrencyProfitLoss">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <italic>false</italic>
+                     <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Profit / Loss</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1475,7 +1570,7 @@ border-top-right-radius: 0px;
                       <x>0</x>
                       <y>0</y>
                       <width>790</width>
-                      <height>546</height>
+                      <height>535</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1645,20 +1740,133 @@ color:white;</string>
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_12">
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
                  <item>
-                  <widget class="QLabel" name="label_8">
+                  <widget class="QLabel" name="labelSharesName">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <italic>false</italic>
+                     <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>Name</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_9">
+                  <widget class="QLabel" name="labelSharesQuantity">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <italic>false</italic>
+                     <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>Quantity</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelSharesValue">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <italic>false</italic>
+                     <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Value</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelSharesCurrentPrice">
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Current price</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelSharesProfitLoss">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <italic>false</italic>
+                     <bold>true</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Profit / Loss</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1714,8 +1922,8 @@ border-top-right-radius: 0px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>100</width>
-                      <height>30</height>
+                      <width>790</width>
+                      <height>535</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_22">
