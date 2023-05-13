@@ -15,38 +15,37 @@ class Ui_Form(object):
         Form.resize(500, 259)
         Form.setMaximumSize(QtCore.QSize(500, 16777215))
         Form.setAcceptDrops(False)
-        Form.setStyleSheet(
-                "#Form {\n"
-                "    background-color: #474E68;\n"
-                "}\n"
-                "\n"
-                "QLabel {\n"
-                "    color: rgb(255, 255, 255);\n"
-                "}\n"
-                "\n"
-                "QLineEdit {\n"
-                "    color: rgb(255, 255, 255);\n"
-                "    background-color: #50577A;\n"
-                "    border-radius: 3px;\n"
-                "    border: 1px solid white;\n"
-                "}\n"
-                "\n"
-                "QLineEdit:focus {\n"
-                "    border: 1px solid #EC47ED;\n"
-                "}\n"
-                "\n"
-                "QPushButton {\n"
-                "    color: rgb(255, 255, 255);\n"
-                "    background-color: #50577A;\n"
-                "    border-radius: 3px;\n"
-                "    border: 1px solid white;\n"
-                "}\n"
-                "\n"
-                "QPushButton:hover {\n"
-                "    background-color: #6B728E\n"
-                "}\n"
-                "\n"
-                "")
+        Form.setStyleSheet("#Form {\n"
+"    background-color: #474E68;\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: #50577A;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid white;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #EC47ED;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: #50577A;\n"
+"    border-radius: 3px;\n"
+"    border: 1px solid white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #6B728E\n"
+"}\n"
+"\n"
+"")
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -95,7 +94,7 @@ class Ui_Form(object):
         self.horizontalLayout_2.setContentsMargins(-1, 5, -1, 5)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_name = QtWidgets.QLabel(parent=self.frame_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_name.sizePolicy().hasHeightForWidth())
@@ -127,7 +126,7 @@ class Ui_Form(object):
         self.horizontalLayout_3.setContentsMargins(-1, 5, -1, 5)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.label_quantity = QtWidgets.QLabel(parent=self.frame_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_quantity.sizePolicy().hasHeightForWidth())
@@ -139,6 +138,19 @@ class Ui_Form(object):
         self.lineEdit_quantity.setFrame(False)
         self.lineEdit_quantity.setObjectName("lineEdit_quantity")
         self.horizontalLayout_3.addWidget(self.lineEdit_quantity)
+        self.label_totlacprice = QtWidgets.QLabel(parent=self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_totlacprice.sizePolicy().hasHeightForWidth())
+        self.label_totlacprice.setSizePolicy(sizePolicy)
+        self.label_totlacprice.setMinimumSize(QtCore.QSize(50, 0))
+        self.label_totlacprice.setObjectName("label_totlacprice")
+        self.horizontalLayout_3.addWidget(self.label_totlacprice)
+        self.lineEdit_totalprice = QtWidgets.QLineEdit(parent=self.frame_4)
+        self.lineEdit_totalprice.setFrame(False)
+        self.lineEdit_totalprice.setObjectName("lineEdit_totalprice")
+        self.horizontalLayout_3.addWidget(self.lineEdit_totalprice)
         self.verticalLayout_2.addWidget(self.frame_4)
         self.frame_5 = QtWidgets.QFrame(parent=self.frame)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
@@ -152,51 +164,37 @@ class Ui_Form(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_5)
         self.horizontalLayout_4.setContentsMargins(-1, 5, -1, 5)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_price = QtWidgets.QLabel(parent=self.frame_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_price.sizePolicy().hasHeightForWidth())
-        self.label_price.setSizePolicy(sizePolicy)
-        self.label_price.setMinimumSize(QtCore.QSize(50, 0))
-        self.label_price.setObjectName("label_price")
-        self.horizontalLayout_4.addWidget(self.label_price)
-        self.lineEdit_price = QtWidgets.QLineEdit(parent=self.frame_5)
-        self.lineEdit_price.setFrame(False)
-        self.lineEdit_price.setObjectName("lineEdit_price")
-        self.horizontalLayout_4.addWidget(self.lineEdit_price)
         self.verticalLayout_2.addWidget(self.frame_5)
         self.frame_6 = QtWidgets.QFrame(parent=self.frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.frame_6.sizePolicy().hasHeightForWidth())
-        self.frame_6.setSizePolicy(sizePolicy)
         self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_6.setObjectName("frame_6")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_6)
-        self.horizontalLayout_5.setContentsMargins(-1, 5, -1, 5)
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame_6)
+        self.gridLayout.setContentsMargins(-1, 5, -1, 5)
+        self.gridLayout.setObjectName("gridLayout")
         self.label_date = QtWidgets.QLabel(parent=self.frame_6)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_date.sizePolicy().hasHeightForWidth())
         self.label_date.setSizePolicy(sizePolicy)
-        self.label_date.setMinimumSize(QtCore.QSize(50, 0))
+        self.label_date.setMinimumSize(QtCore.QSize(55, 0))
         self.label_date.setObjectName("label_date")
-        self.horizontalLayout_5.addWidget(self.label_date)
+        self.gridLayout.addWidget(self.label_date, 0, 0, 1, 1)
+        self.label_storage = QtWidgets.QLabel(parent=self.frame_6)
+        self.label_storage.setObjectName("label_storage")
+        self.gridLayout.addWidget(self.label_storage, 1, 0, 1, 1)
+        self.lineEdit_storage = QtWidgets.QLineEdit(parent=self.frame_6)
+        self.lineEdit_storage.setObjectName("lineEdit_storage")
+        self.gridLayout.addWidget(self.lineEdit_storage, 1, 1, 1, 1)
         self.lineEdit_date = QtWidgets.QLineEdit(parent=self.frame_6)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.MinimumExpanding, QtWidgets.QSizePolicy.Policy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Ignored, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineEdit_date.sizePolicy().hasHeightForWidth())
         self.lineEdit_date.setSizePolicy(sizePolicy)
-        self.lineEdit_date.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
-        self.lineEdit_date.setFrame(False)
         self.lineEdit_date.setObjectName("lineEdit_date")
-        self.horizontalLayout_5.addWidget(self.lineEdit_date)
+        self.gridLayout.addWidget(self.lineEdit_date, 0, 1, 1, 1)
         self.verticalLayout_2.addWidget(self.frame_6)
         self.verticalLayout.addWidget(self.frame)
         self.frame_7 = QtWidgets.QFrame(parent=Form)
@@ -223,11 +221,12 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Nowe aktywo"))
-        self.label_frametitle.setText(_translate("Form", "Nowe aktywo"))
-        self.label_name.setText(_translate("Form", "Nazwa"))
-        self.label_quantity.setText(_translate("Form", "Ilość"))
-        self.label_price.setText(_translate("Form", "Cena"))
-        self.label_date.setText(_translate("Form", "Data"))
-        self.pushButton_cancel.setText(_translate("Form", "Anuluj"))
-        self.pushButton_subbmit.setText(_translate("Form", "Gotowe"))
+        Form.setWindowTitle(_translate("Form", "New asset"))
+        self.label_frametitle.setText(_translate("Form", "New asset"))
+        self.label_name.setText(_translate("Form", "Name"))
+        self.label_quantity.setText(_translate("Form", "Quantity"))
+        self.label_totlacprice.setText(_translate("Form", "  Total price"))
+        self.label_date.setText(_translate("Form", "Date"))
+        self.label_storage.setText(_translate("Form", "Storage place"))
+        self.pushButton_cancel.setText(_translate("Form", "Cancel"))
+        self.pushButton_subbmit.setText(_translate("Form", "Confirm"))

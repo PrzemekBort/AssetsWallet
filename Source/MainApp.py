@@ -1,7 +1,6 @@
 from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtWidgets import QMainWindow, QDialog, QWidget
-from GUI.Interfaces import MainWindow_Interface, InputWindow_Interface, ErrorMessageBox_Interface
-import GUI.Interfaces.Testowy as test
+from GUI.Interfaces import MainWindow_Interface, InputWindow_Interface, ErrorMessageBox_Interface, GoldWidget_Interface
 
 
 class MainWindow(QMainWindow):
@@ -50,17 +49,15 @@ class MainWindow(QMainWindow):
         self.ui.label.setText(newText)
         self.ui.MainStackedWidget.setCurrentIndex(newPageIndex)
 
-    def setNewWidgetValues(self, values: list):
+    def setNewWidgetValues(self, values: dict):
         """Function takes and setup values entered in 'InputWindow' window. Values are forwarded
             to this function in list."""
 
-        self.newWidgetName = str(values[0])
-        self.newWidgetQuantity = str(values[1])
-        self.newWidgetPrice = str(values[2])
-        self.newWidgetDate = str(values[3])
+        self.newWidgetName = str(values['Name'])
+        self.newWidgetQuantity = str(values['Quantity'])
+        self.newWidgetPrice = str(values['Price'])
         self.dataEnteredFlag = True
 
-    # TODO dostosowanie funkcji do każdego typu Assetu
     def addNewWidgetTo(self, layout: QtWidgets.QLayout):
         """Function calls new window to eneter data for new widget. Calls 'createNewWidget' with entered data
             and add it to destiny layout."""
@@ -78,6 +75,21 @@ class MainWindow(QMainWindow):
             self.newWidget.clickedWidget.connect(self.changeClickedWidget)
 
             layout.addWidget(self.newWidget)
+
+    def addGoldWidget(self):
+        pass
+
+    def addCryptoWidget(self):
+        pass
+
+    def addCurrencyWidget(self):
+        pass
+
+    def addSharesWidget(self):
+        pass
+
+    def addCashWidget(self):
+        pass
 
     def deleteWidgetFrom(self, layout: QtWidgets.QLayout):
         """Function removes widget from layout and delete widget"""
@@ -102,7 +114,7 @@ class MainWindow(QMainWindow):
 
 class InputWindow(QDialog):
 
-    enteredData = QtCore.pyqtSignal(list)
+    enteredData = QtCore.pyqtSignal(dict)
 
     def __init__(self):
         super(InputWindow, self).__init__()
@@ -113,22 +125,49 @@ class InputWindow(QDialog):
         self.ui.pushButton_cancel.clicked.connect(self.close)
 
     def confirm(self):
-        # TODO Dodać komunikat gdy któraś rubryka jest pusta
+        nameIsEntered, quantityIsEntered, priceIsEntered = True, True, True
 
-        try:
-            quantity = float(self.ui.lineEdit_quantity.text())
-            price = float(self.ui.lineEdit_price.text())
-
-        except ValueError:
-            self.ui.lineEdit_quantity.clear()
-            self.ui.lineEdit_price.clear()
-            ErrorMessageBox('Wprowadzone wartości są błędne. Ilośc i cena muszą być liczbami.').exec()
-
+        # Name check
+        if self.ui.lineEdit_name.text() == '':
+            nameIsEntered = False
+            self.ui.label_name.setStyleSheet('color: red;')
         else:
-            values = [self.ui.lineEdit_name.text(), quantity,
-                      price, self.ui.lineEdit_date.text()]
-            self.enteredData.emit(values)
-            self.close()
+            nameIsEntered = True
+            self.ui.label_name.setStyleSheet('color: white')
+
+        # Quantity check
+        if self.ui.lineEdit_quantity.text() == '':
+            quantityIsEntered = False
+            self.ui.label_quantity.setStyleSheet('color: red;')
+        else:
+            quantityIsEntered = True
+            self.ui.label_quantity.setStyleSheet('color: white')
+
+        # Price check
+        if self.ui.lineEdit_totalprice.text() == '':
+            priceIsEntered = False
+            self.ui.label_totlacprice.setStyleSheet('color: red;')
+        else:
+            priceIsEntered = True
+            self.ui.label_totlacprice.setStyleSheet('color: white')
+
+        if (nameIsEntered and quantityIsEntered and priceIsEntered) is True:
+            try:
+                quantity = float(self.ui.lineEdit_quantity.text())
+                totalPrice = float(self.ui.lineEdit_totalprice.text())
+
+            except ValueError:
+                self.ui.lineEdit_quantity.clear()
+                self.ui.lineEdit_totalprice.clear()
+                ErrorMessageBox('Wrong values. Qunatity and price must be numbers.').exec()
+
+            else:
+                values = {'Name': self.ui.lineEdit_name.text(), 'Quantity': self.ui.lineEdit_quantity.text(),
+                          'Price': self.ui.lineEdit_totalprice.text()}
+                self.enteredData.emit(values)
+                self.close()
+        else:
+            ErrorMessageBox('Not all mandatory values are provided!').exec()
 
 
 class ErrorMessageBox(QDialog):
@@ -202,11 +241,12 @@ class GoldWidget(AssetWidget):
 
     def __init__(self, name, quantity, value):
         super(GoldWidget, self).__init__()
-        self.ui = test.Ui_Form()
+        self.ui = GoldWidget_Interface.Ui_Form()
         self.ui.setupUi(self)
 
         self.ui.nameLabel.setText(name)
         self.ui.quantityLabel.setText(quantity)
         self.ui.valueLabel.setText(value)
         self.ui.priceLabel.setText('No data')
+        self.ui.profitLossLabel.setText('No data')
 
