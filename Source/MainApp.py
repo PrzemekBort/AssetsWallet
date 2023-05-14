@@ -49,29 +49,19 @@ class MainWindow(QMainWindow):
         self.ui.label.setText(newText)
         self.ui.MainStackedWidget.setCurrentIndex(newPageIndex)
 
-    def setNewWidgetValues(self, values: dict):
-        """Function takes and setup values entered in 'InputWindow' window. Values are forwarded
-            to this function in list."""
-
-        self.newWidgetName = str(values['Name'])
-        self.newWidgetQuantity = str(values['Quantity'])
-        self.newWidgetPrice = str(values['Price'])
-        self.dataEnteredFlag = True
-
     def addNewWidgetTo(self, layout: QtWidgets.QLayout):
-        """Function calls new window to eneter data for new widget. Calls 'createNewWidget' with entered data
-            and add it to destiny layout."""
+        """Function calls new window to eneter data for new widget and create new asset widget"""
 
-        # Flag to check if data from 'InputWindow' were forwarded correctly or window was just closed
-        self.dataEnteredFlag = False
+        # Dictionary for values emited from InputWidget
+        enteredValues = dict()
 
         self.newWindow = InputWindow()
-        self.newWindow.enteredData.connect(self.setNewWidgetValues)
+        self.newWindow.enteredData.connect(enteredValues.update)
         self.newWindow.exec()
 
-        # When data are forwarded correctly, flag is true and new widget can be created
-        if self.dataEnteredFlag:
-            self.newWidget = GoldWidget(self.newWidgetName, self.newWidgetQuantity, self.newWidgetPrice)
+        # When data are forwarded correctly, enteredValues are not empty dict
+        if enteredValues:
+            self.newWidget = GoldWidget(enteredValues['Name'], enteredValues['Quantity'], enteredValues['Price'])
             self.newWidget.clickedWidget.connect(self.changeClickedWidget)
 
             layout.addWidget(self.newWidget)
@@ -127,7 +117,7 @@ class InputWindow(QDialog):
     def confirm(self):
         nameIsEntered, quantityIsEntered, priceIsEntered = True, True, True
 
-        # Name check
+        # Checking if neccesarry fields are entered
         if self.ui.lineEdit_name.text() == '':
             nameIsEntered = False
             self.ui.label_name.setStyleSheet('color: red;')
@@ -135,7 +125,6 @@ class InputWindow(QDialog):
             nameIsEntered = True
             self.ui.label_name.setStyleSheet('color: white')
 
-        # Quantity check
         if self.ui.lineEdit_quantity.text() == '':
             quantityIsEntered = False
             self.ui.label_quantity.setStyleSheet('color: red;')
@@ -143,7 +132,6 @@ class InputWindow(QDialog):
             quantityIsEntered = True
             self.ui.label_quantity.setStyleSheet('color: white')
 
-        # Price check
         if self.ui.lineEdit_totalprice.text() == '':
             priceIsEntered = False
             self.ui.label_totlacprice.setStyleSheet('color: red;')
@@ -152,20 +140,22 @@ class InputWindow(QDialog):
             self.ui.label_totlacprice.setStyleSheet('color: white')
 
         if (nameIsEntered and quantityIsEntered and priceIsEntered) is True:
+            # Checking if quantity and price values are numbers
             try:
                 quantity = float(self.ui.lineEdit_quantity.text())
                 totalPrice = float(self.ui.lineEdit_totalprice.text())
 
             except ValueError:
-                self.ui.lineEdit_quantity.clear()
-                self.ui.lineEdit_totalprice.clear()
                 ErrorMessageBox('Wrong values. Qunatity and price must be numbers.').exec()
 
             else:
-                values = {'Name': self.ui.lineEdit_name.text(), 'Quantity': self.ui.lineEdit_quantity.text(),
-                          'Price': self.ui.lineEdit_totalprice.text()}
+                values = {'Name': str(self.ui.lineEdit_name.text()), 'Quantity': str(quantity),
+                          'Price': str(totalPrice), 'Date': str(self.ui.lineEdit_date),
+                          'StoragePlace': str(self.ui.lineEdit_storage)}
+
                 self.enteredData.emit(values)
                 self.close()
+
         else:
             ErrorMessageBox('Not all mandatory values are provided!').exec()
 
@@ -249,4 +239,3 @@ class GoldWidget(AssetWidget):
         self.ui.valueLabel.setText(value)
         self.ui.priceLabel.setText('No data')
         self.ui.profitLossLabel.setText('No data')
-
