@@ -2,7 +2,7 @@ from PyQt6 import QtCore
 from PyQt6.QtWidgets import QMainWindow, QDialog, QLayout
 from GUI.Interfaces import MainWindow_Interface, InputWindow_Interface, ErrorMessageBox_Interface
 
-from AssetsWidgets import GoldWidget
+from GUI.AssetsWidgets import GoldWidget
 
 
 class MainWindow(QMainWindow):
