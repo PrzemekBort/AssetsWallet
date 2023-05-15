@@ -1,6 +1,8 @@
-from PyQt6 import QtCore, QtWidgets, QtGui
-from PyQt6.QtWidgets import QMainWindow, QDialog, QWidget
-from GUI.Interfaces import MainWindow_Interface, InputWindow_Interface, ErrorMessageBox_Interface, GoldWidget_Interface
+from PyQt6 import QtCore
+from PyQt6.QtWidgets import QMainWindow, QDialog, QLayout
+from GUI.Interfaces import MainWindow_Interface, InputWindow_Interface, ErrorMessageBox_Interface
+
+from AssetsWidgets import GoldWidget
 
 
 class MainWindow(QMainWindow):
@@ -49,13 +51,13 @@ class MainWindow(QMainWindow):
         self.ui.label.setText(newText)
         self.ui.MainStackedWidget.setCurrentIndex(newPageIndex)
 
-    def addNewWidgetTo(self, layout: QtWidgets.QLayout):
+    def addNewWidgetTo(self, layout: QLayout):
         """Function calls new window to eneter data for new widget and create new asset widget"""
 
         # Dictionary for values emited from InputWidget
         enteredValues = dict()
 
-        self.newWindow = InputWindow()
+        self.newWindow = InputDataWindow()
         self.newWindow.enteredData.connect(enteredValues.update)
         self.newWindow.exec()
 
@@ -66,22 +68,7 @@ class MainWindow(QMainWindow):
 
             layout.addWidget(self.newWidget)
 
-    def addGoldWidget(self):
-        pass
-
-    def addCryptoWidget(self):
-        pass
-
-    def addCurrencyWidget(self):
-        pass
-
-    def addSharesWidget(self):
-        pass
-
-    def addCashWidget(self):
-        pass
-
-    def deleteWidgetFrom(self, layout: QtWidgets.QLayout):
+    def deleteWidgetFrom(self, layout: QLayout):
         """Function removes widget from layout and delete widget"""
         
         # Checking if any widget is clicked
@@ -102,12 +89,12 @@ class MainWindow(QMainWindow):
             self.currentClickedWidget = None
 
 
-class InputWindow(QDialog):
+class InputDataWindow(QDialog):
 
     enteredData = QtCore.pyqtSignal(dict)
 
     def __init__(self):
-        super(InputWindow, self).__init__()
+        super(InputDataWindow, self).__init__()
         self.ui = InputWindow_Interface.Ui_Form()
         self.ui.setupUi(self)
 
@@ -146,7 +133,7 @@ class InputWindow(QDialog):
                 totalPrice = float(self.ui.lineEdit_totalprice.text())
 
             except ValueError:
-                ErrorMessageBox('Wrong values. Qunatity and price must be numbers.').exec()
+                MessageBox('Wrong values. Qunatity and price must be numbers.').exec()
 
             else:
                 values = {'Name': str(self.ui.lineEdit_name.text()), 'Quantity': str(quantity),
@@ -157,85 +144,15 @@ class InputWindow(QDialog):
                 self.close()
 
         else:
-            ErrorMessageBox('Not all mandatory values are provided!').exec()
+            MessageBox('Not all mandatory values are provided!').exec()
 
 
-class ErrorMessageBox(QDialog):
+class MessageBox(QDialog):
 
     def __init__(self, messageText):
-        super(ErrorMessageBox, self).__init__()
+        super(MessageBox, self).__init__()
         self.ui = ErrorMessageBox_Interface.Ui_Form()
         self.ui.setupUi(self)
         self.ui.label.setText(messageText)
 
         self.ui.pushButton.clicked.connect(self.close)
-
-
-class AssetWidget(QWidget):
-
-    clickedWidget = QtCore.pyqtSignal(list)
-
-    def __init__(self):
-        super(AssetWidget, self).__init__()
-        # Opposite of current stylesheet. BASE=0, ALTERNATIVE=1.
-        #   example: if current stylesheet is BASE, self.notCurrentStyle=1
-        self.notCurrentStyle = 1
-
-    def mouseReleaseEvent(self, a0: QtGui.QMouseEvent):
-        self.clickEvent(self.notCurrentStyle)
-
-    def clickEvent(self, style: int):
-        """Function change current stylesheet when widget is clicked
-        and emit signal for MainWindow to change previous clicked widget to BASE stylesheet."""
-
-        if style == 0:
-            self.setBasedStylesheet()
-            self.clickedWidget.emit([0, self])
-
-        elif style == 1:
-            # Change stylesheet to alternative for clicked widget
-            self.setAlternativeStylesheet()
-            self.clickedWidget.emit([1, self])
-
-    def setBasedStylesheet(self):
-
-        BASE_STYLESHEET = (
-            "QFrame {\n"
-            "    background-color: rgb(199, 199, 199);\n"
-            "    color: rgb(0, 0, 0);\n"
-            "    border-radius: 15px;\n"
-            "}\n"
-            ".QFrame {\n"
-            "    border: 2px solid rgb(199, 199, 199);\n"
-            "}")
-
-        self.setStyleSheet(BASE_STYLESHEET)
-        self.notCurrentStyle = 1
-
-    def setAlternativeStylesheet(self):
-
-        ALTERNATIVE_STYLESHEET = (
-            "QFrame {\n"
-            "    background-color: rgb(199, 199, 199);\n"
-            "    border-radius: 15px;\n"
-            "    color: rgb(0, 0, 0);\n"
-            "}\n"
-            ".QFrame {\n"
-            "    border: 2px solid white\n"
-            "}")
-        self.setStyleSheet(ALTERNATIVE_STYLESHEET)
-        self.notCurrentStyle = 0
-
-
-class GoldWidget(AssetWidget):
-
-    def __init__(self, name, quantity, value):
-        super(GoldWidget, self).__init__()
-        self.ui = GoldWidget_Interface.Ui_Form()
-        self.ui.setupUi(self)
-
-        self.ui.nameLabel.setText(name)
-        self.ui.quantityLabel.setText(quantity)
-        self.ui.valueLabel.setText(value)
-        self.ui.priceLabel.setText('No data')
-        self.ui.profitLossLabel.setText('No data')
