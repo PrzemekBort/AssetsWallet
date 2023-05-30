@@ -105,8 +105,7 @@ class Ui_MainWindow(object):
         self.pushButton_menu.setStyleSheet("")
         self.pushButton_menu.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-squared-menu-100.png"),
-                       QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon.addPixmap(QtGui.QPixmap(":/Icons/Icons/icons8-squared-menu-50.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_menu.setIcon(icon)
         self.pushButton_menu.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_menu.setShortcut("")
@@ -131,8 +130,7 @@ class Ui_MainWindow(object):
         self.pushButton_gold.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_gold.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-gold-bars-100.png"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon1.addPixmap(QtGui.QPixmap("Icons/icons8-gold-bars-100.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_gold.setIcon(icon1)
         self.pushButton_gold.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_gold.setFlat(True)
@@ -143,8 +141,7 @@ class Ui_MainWindow(object):
         self.pushButton_crypto.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_crypto.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-bitcoin-100.png"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon2.addPixmap(QtGui.QPixmap("Icons/icons8-bitcoin-100.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_crypto.setIcon(icon2)
         self.pushButton_crypto.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_crypto.setFlat(True)
@@ -155,8 +152,7 @@ class Ui_MainWindow(object):
         self.pushButton_currency.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_currency.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-cash-100.png"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon3.addPixmap(QtGui.QPixmap("Icons/icons8-cash-100.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_currency.setIcon(icon3)
         self.pushButton_currency.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_currency.setFlat(True)
@@ -167,8 +163,7 @@ class Ui_MainWindow(object):
         self.pushButton_shares.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_shares.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-stock-share-100.png"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon4.addPixmap(QtGui.QPixmap("Icons/icons8-stock-share-100.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_shares.setIcon(icon4)
         self.pushButton_shares.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_shares.setFlat(True)
@@ -179,8 +174,7 @@ class Ui_MainWindow(object):
         self.pushButton_cash.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_cash.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-dollar-coin-100.png"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon5.addPixmap(QtGui.QPixmap("Icons/icons8-dollar-coin-100.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_cash.setIcon(icon5)
         self.pushButton_cash.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_cash.setFlat(True)
@@ -201,8 +195,7 @@ class Ui_MainWindow(object):
         self.pushButton_settings.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButton_settings.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("GUI/Interfaces/Icons/icons8-settings-100.png"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon6.addPixmap(QtGui.QPixmap("Icons/icons8-settings-100.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.pushButton_settings.setIcon(icon6)
         self.pushButton_settings.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_settings.setFlat(True)

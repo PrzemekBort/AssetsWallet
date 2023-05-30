@@ -1,21 +1,41 @@
 from PyQt6.QtWidgets import QWidget
 from PyQt6 import QtCore, QtGui
-from GUI.Interfaces import GoldWidget_Interface
+from GUI.Interfaces import Widget_Interface
+from abc import abstractmethod
 
 
 class AssetWidget(QWidget):
 
     clickedWidget = QtCore.pyqtSignal(list)
 
-    def __init__(self):
+    def __init__(self, name: str, quantity: float, buyPrice: float, buyDate=None):
         super(AssetWidget, self).__init__()
+        self.ui = Widget_Interface.Ui_Form()
+        self.ui.setupUi(self)
+
+        # Parameters bellow are common for all asset types
+        self.name = name
+        self.quantity = quantity
+        self.buyPrice = buyPrice
+        self.buyDate = buyDate
+
         # Opposite of current stylesheet. BASE=0, ALTERNATIVE=1.
-        #   example: if current stylesheet is BASE, self.notCurrentStyle=1
         self.notCurrentStyle = 1
 
-    def mouseReleaseEvent(self, a0: QtGui.QMouseEvent):
-        self.clickEvent(self.notCurrentStyle)
+    # SETTING LABELS
+    def setNameLabel(self, name: str):
+        self.ui.nameLabel.setText(name)
 
+    def setQuantityLabel(self, quantity: float):
+        self.ui.quantityLabel.setText(str(quantity))
+
+    def setCurrentValueLabel(self, value: float):
+        self.ui.currentValueLabel.setText(str(value))
+
+    def setProfitLossRatioLabel(self, ratio: float):
+        self.ui.profitLossLabel.setText(str(ratio))
+
+    # SETTING EVENTS
     def clickEvent(self, style: int):
         """Function change current stylesheet when widget is clicked
         and emit signal for MainWindow to change previous clicked widget to BASE stylesheet."""
@@ -29,6 +49,10 @@ class AssetWidget(QWidget):
             self.setAlternativeStylesheet()
             self.clickedWidget.emit([1, self])
 
+    def mouseReleaseEvent(self, a0: QtGui.QMouseEvent):
+        self.clickEvent(self.notCurrentStyle)
+
+    # SETTING STYLESHEETS
     def setBasedStylesheet(self):
 
         BASE_STYLESHEET = (
@@ -58,16 +82,31 @@ class AssetWidget(QWidget):
         self.setStyleSheet(ALTERNATIVE_STYLESHEET)
         self.notCurrentStyle = 0
 
+    # FUNCTIONALITY
+    @abstractmethod
+    def countCurrentValue(self):
+        pass
+
+    def countProfitRate(self):
+        value = self.countCurrentValue()
+        return value - self.buyPrice
+
 
 class GoldWidget(AssetWidget):
 
-    def __init__(self, name, quantity, value):
-        super(GoldWidget, self).__init__()
-        self.ui = GoldWidget_Interface.Ui_Form()
-        self.ui.setupUi(self)
+    def __init__(self, name: str, quantity: float, buyPrice: float, buyDate=None, goldFormType=None,
+                 goldOrigin=None, goldFiness=None):
 
-        self.ui.nameLabel.setText(name)
-        self.ui.quantityLabel.setText(quantity)
-        self.ui.valueLabel.setText(value)
-        self.ui.priceLabel.setText('No data')
-        self.ui.profitLossLabel.setText('No data')
+        super(GoldWidget, self).__init__(name, quantity, buyPrice, buyDate)
+        self.goldFormType = goldFormType   # Type of gold form e.g. coin, billet, contract
+        self.goldOrigin = goldOrigin
+        self.goldFiness = goldFiness
+
+        self.setNameLabel(self.name)
+        self.setQuantityLabel(self.quantity)
+        self.setCurrentValueLabel(self.countCurrentValue())
+        self.setProfitLossRatioLabel(self.countProfitRate())
+
+    def countCurrentValue(self):
+        # TODO Zaimplementowac
+        pass
