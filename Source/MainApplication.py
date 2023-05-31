@@ -11,7 +11,3 @@ class MainProgram(QApplication):
         self.MainWindow = MainWindow()
         self.dbConnection = dbs.connectDataBase('../Database/AssetsDataBase.db')
         self.MainWindow.show()
-
-    def loadData(self):
-        """Load data from DB, """
-        pass

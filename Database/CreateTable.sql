@@ -5,7 +5,7 @@ CREATE TABLE GOLDSET (
     BuyPrice FLOAT NOT NULL,
     BuyDate DATE,
     GoldForm CHAR(50),
-    Origin CHAR(50)
+    Origin CHAR(50),
     Finess INT,
     PRIMARY KEY (Gold_ID)
 );
