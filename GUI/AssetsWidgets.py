@@ -8,12 +8,13 @@ class AssetWidget(QWidget):
 
     clickedWidget = QtCore.pyqtSignal(list)
 
-    def __init__(self, name: str, quantity: float, buyPrice: float, buyDate=None):
+    def __init__(self, ID: int, name: str, quantity: float, buyPrice: float, buyDate=None):
         super(AssetWidget, self).__init__()
         self.ui = Widget_Interface.Ui_Form()
         self.ui.setupUi(self)
 
         # Parameters bellow are common for all asset types
+        self.ID = ID  # PRIMARY KEY in database
         self.name = name
         self.quantity = quantity
         self.buyPrice = buyPrice
@@ -94,10 +95,10 @@ class AssetWidget(QWidget):
 
 class GoldWidget(AssetWidget):
 
-    def __init__(self, name: str, quantity: float, buyPrice: float, buyDate=None, goldFormType=None,
+    def __init__(self, Gold_ID: int, name: str, quantity: float, buyPrice: float, buyDate=None, goldFormType=None,
                  goldOrigin=None, goldFiness=None):
 
-        super(GoldWidget, self).__init__(name, quantity, buyPrice, buyDate)
+        super(GoldWidget, self).__init__(Gold_ID, name, quantity, buyPrice, buyDate)
         self.goldFormType = goldFormType   # Type of gold form e.g. coin, billet, contract
         self.goldOrigin = goldOrigin
         self.goldFiness = goldFiness

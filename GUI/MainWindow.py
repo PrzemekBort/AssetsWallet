@@ -27,13 +27,13 @@ class MainWindow(QMainWindow):
 
         # Add buttons setup
         self.ui.pushButton_gold_add.clicked.connect(
-            lambda: self.addNewWidgetTo(self.ui.destinationVerticalLayout_gold))
+            lambda: self.createNewGoldWidget(self.ui.destinationVerticalLayout_gold))
         self.ui.pushButton_crypto_add.clicked.connect(
-            lambda: self.addNewWidgetTo(self.ui.destinationVerticalLayout_crypto))
+            lambda: self.createNewGoldWidget(self.ui.destinationVerticalLayout_crypto))
         self.ui.pushButton_currency_add.clicked.connect(
-            lambda: self.addNewWidgetTo(self.ui.destinationVerticalLayout_currency))
+            lambda: self.createNewGoldWidget(self.ui.destinationVerticalLayout_currency))
         self.ui.pushButton_shares_add.clicked.connect(
-            lambda: self.addNewWidgetTo(self.ui.destinationVerticalLayout_shares))
+            lambda: self.createNewGoldWidget(self.ui.destinationVerticalLayout_shares))
 
         # Delete buttons setup
         self.ui.pushButton_gold_delete.clicked.connect(
@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
         self.ui.label.setText(newText)
         self.ui.MainStackedWidget.setCurrentIndex(newPageIndex)
 
-    def addNewWidgetTo(self, layout: QLayout):
+    def createNewGoldWidget(self):
         """Function calls new window to eneter data for new widget and create new asset widget"""
 
         # Dictionary for values emited from InputWidget
@@ -65,9 +65,7 @@ class MainWindow(QMainWindow):
         # When data are forwarded correctly, enteredValues are not empty dict
         if enteredValues:
             self.newWidget = GoldWidget(enteredValues['Name'], enteredValues['Quantity'], enteredValues['Price'])
-            self.newWidget.clickedWidget.connect(self.changeClickedWidget)
-
-            layout.addWidget(self.newWidget)
+            self.addNewGoldWidget(self.newWidget)
 
     def deleteWidgetFrom(self, layout: QLayout):
         """Function removes widget from layout and delete widget"""
@@ -88,5 +86,10 @@ class MainWindow(QMainWindow):
 
         else:
             self.currentClickedWidget = None
+
+    def addNewGoldWidget(self, goldWidgetObject: GoldWidget):
+        goldWidgetObject.clickedWidget.connect(self.changeClickedWidget)
+        self.ui.destinationVerticalLayout_gold.addWidget(goldWidgetObject)
+
 
 

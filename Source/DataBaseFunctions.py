@@ -20,7 +20,7 @@ def connectDataBase(filePath):
         return conn
 
 
-def loadData(connection, tableName):
+def loadData(connection: sqlite3.Connection, tableName: str):
     """Load and return rows from given table using connection. If table not exist return None."""
     try:
         cursor = connection.execute(f"SELECT * FROM {tableName};")
@@ -29,7 +29,3 @@ def loadData(connection, tableName):
     except sqlite3.OperationalError:
         print(f'Error: Table {tableName} not exist.')
         return None
-
-
-connn = connectDataBase('../Database/test.db')
-loadData(connn, 'GOLDSE')
