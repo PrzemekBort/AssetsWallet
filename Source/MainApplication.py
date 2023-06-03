@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QApplication
 from GUI.MainWindow import MainWindow
 import GUI.AssetsWidgets as appWidgets
 import Source.DataBaseFunctions as dbf
-from Settings import dataBaseDirectoryPath
+from Source.Settings import dataBaseDirectoryPath
 
 
 class MainProgram(QApplication):
@@ -12,6 +12,7 @@ class MainProgram(QApplication):
         super(MainProgram, self).__init__(arg)
         self.MainWindow = MainWindow()
         self.dbConnection = dbf.connectDataBase(dataBaseDirectoryPath.joinpath('AssetsDataBase.db'))
+        self.loadGoldAssets()
         self.MainWindow.show()
 
     def loadGoldAssets(self):
@@ -33,5 +34,5 @@ class MainProgram(QApplication):
 
                 newGoldWidget = appWidgets.GoldWidget(gold_ID, name, quantity, buyPrice,
                                                       buyDate, goldForm, origin, finess)
-
+                self.MainWindow.addNewGoldWidget(newGoldWidget)
                 # TODO implement

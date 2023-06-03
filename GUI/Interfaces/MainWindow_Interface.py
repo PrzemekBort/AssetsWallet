@@ -7,9 +7,9 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-import Settings
+import Source.Settings
 
-path = str(Settings.iconsPath)
+path = str(Source.Settings.iconsPath)
 iconPath = path.replace('\\', '/')
 
 
