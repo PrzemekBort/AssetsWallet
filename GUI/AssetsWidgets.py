@@ -1,7 +1,9 @@
 from PyQt6.QtWidgets import QWidget
 from PyQt6 import QtCore, QtGui
-from GUI.Interfaces import Widget_Interface
 from abc import abstractmethod
+
+from GUI.Interfaces import Widget_Interface
+import Source.WebScraper as WS
 
 
 class AssetWidget(QWidget):
@@ -16,7 +18,7 @@ class AssetWidget(QWidget):
         # Parameters bellow are common for all asset types
         self.ID = ID  # PRIMARY KEY in database
         self.name = name
-        self.quantity = quantity
+        self.quantity = quantity  # Quantity in ounces
         self.buyPrice = buyPrice
         self.buyDate = buyDate
 
@@ -105,9 +107,12 @@ class GoldWidget(AssetWidget):
 
         self.setNameLabel(self.name)
         self.setQuantityLabel(self.quantity)
+        self.countCurrentValue()
         self.setCurrentValueLabel(self.countCurrentValue())
         self.setProfitLossRatioLabel(self.countProfitRate())
 
     def countCurrentValue(self):
-        # TODO Zaimplementowac
-        pass
+        goldPrice = WS.getGoldPricePLN()
+        return goldPrice * self.quantity  # Price for 1 ounce * ounces quantity
+
+
